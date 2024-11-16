@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universities and Courses</title>
+    <link rel="stylesheet" type="text/css" href="E:\pg\subjects\ug.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #edf6f9;
+            margin: 0;
+            padding: 0;
+            margin-top: 10px;
+
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .bullet {
+            width: 80%;
+            max-width: 800px;
+            background-color: #006d77;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            margin-top: 200px;
+            margin-bottom: 100px;
+            margin-left: 350px;
+        }
+        .dropdown-bullet {
+            margin: 20px 0;
+
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .university, .course {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .university {
+            margin-left: 20px;
+            font-weight: bold;
+        }
+        .course {
+            margin-left: 40px;
+        }
+        #country-dropdown{
+            background-color: #94d2bd;
+
+
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+	<header>
+        <div class="nav" id="nav">
+            <div id="learned-logo">
+                <a href="../index.html"><img src="E:\pg\images\icon\Nist.berhampur.logo.jpg" style="width: 120px;"></a>
+
+            </div>
+        </div>
+    </header>
+
+    <div class="bullet">
+        <h1>Universities and Courses</h1>
+        <div class="dropdown-bullet">
+            <select id="country-dropdown" onchange="onCountryChange()">
+                <option value="">Select a country...</option>
+            </select>
+        </div>
+<br>
+
+        
+        <div id="content">
+        </div>
+    </div>
+
+    <script>
+       
+        function populateCountryDropdown() {
+            const dropdown = document.getElementById("country-dropdown");
+
+            const sortedData = data.sort((a, b) => a.country.localeCompare(b.country));
+
+            sortedData.forEach((item) => {
+                const option = document.createElement("option");
+                option.value = item.country;
+                option.textContent = item.country;
+                dropdown.appendChild(option);
+            });
+        }
+        const data = [
+    {
+        country: "USA",
+        universities: [
+            {
+                name: "Harvard University",
+                courses: ["Computer Science", "Law", "Business"]
+            },
+            {
+                name: "MIT",
+                courses: ["Engineering", "Physics", "Mathematics"]
+            }
+        ]
+    },
+    {
+        country: "UK",
+        universities: [
+            {
+                name: "Oxford University",
+                courses: ["Philosophy", "Literature", "Medicine"]
+            },
+            {
+                name: "Cambridge University",
+                courses: ["Law", "Engineering", "Psychology"]
+            }
+        ]
+    }
+];
+
+
+        function onCountryChange() {
+            const selectedCountry = document.getElementById("country-dropdown").value;
+            const selectedData = data.find(item => item.country === selectedCountry);
+            
+            if (selectedData) {
+                renderUniversities(selectedData.universities);
+            } else {
+                document.getElementById("content").innerHTML = ""; 
+            }
+        }
+
+        function renderUniversities(universities) {
+            const contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = ""; 
+
+            universities.forEach((university) => {
+                const universityDiv = document.createElement("div");
+                universityDiv.classList.add("university");
+                universityDiv.textContent = university.name;
+                universityDiv.onclick = () => renderCourses(university.courses);
+
+                contentDiv.appendChild(universityDiv);
+            });
+        }
+
+        function renderCourses(courses) {
+            const contentDiv = document.getElementById("content");
+            contentDiv.innerHTML = ""; 
+            courses.forEach((course) => {
+                const courseDiv = document.createElement("div");
+                courseDiv.classList.add("course");
+                courseDiv.textContent = course;
+                courseDiv.onclick = () => redirectToCourseDetails(course);
+                contentDiv.appendChild(courseDiv);
+            });
+        }
+
+        function redirectToCourseDetails(courseName) {
+            window.location.href = `course-details.html?course=${encodeURIComponent(courseName)}`;
+        }
+
+        populateCountryDropdown();
+    </script>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-container">
+        <div class="left-col">
+            <div class="logo"></div>
+            <div class="social-media">
+                <a href="#"><img src="E:\pg\images/icon/fb.png"></a>
+                <a href="#"><img src="E:\pg\images/icon/insta.png"></a>
+                <a href="#"><img src="E:\pg\images/icon/tt.png"></a>
+                <a href="#"><img src="E:\pg\images/icon/ytube.png"></a>
+                <a href="#"><img src="E:\pg\images/icon/linkedin.png"></a>
+            </div><br><br>
+            <p class="rights-text">Copyright © 2024 Created By Srikant Behera, Linmalayraj Kumar All Rights
+                Reserved.</p>
+            <br>
+            <p><img src="E:\pg\images\icon\location.png">NIST University<br>Berhampur, Odisha-761008</p><br>
+            <p><img src="E:\pg\images\icon\phone.png"> +91-1234-567-890<br><img src="E:\pg\images/icon/mail.png">&nbsp;
+                learnedonline9419@gmail.com</p>
+        </div>
+        <div class="right-col">
+            <h1 style="color: #fff">Our Newsletter</h1>
+            <div class="border"></div><br>
+            <p>Enter Your Email to get our News and updates.</p>
+            <form class="newsletter-form">
+                <input class="txtb" type="email" placeholder="Enter Your Email">
+                <input class="btn" type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

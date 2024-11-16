@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="shortcut icon" type="png" href="../images/icon/favicon.png">
+    <title>International Scholarships</title>
+    <link rel="stylesheet" type="text/css" href="icms.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="nav" id="nav">
+            <div id="learned-logo">
+                <a href="../index.html"><img src="E:\pg\images\icon\Nist.berhampur.logo.jpg" style="width: 120px;"></a>
+            </div>
+            <div>
+                <h1>International Scholarships</h1>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="content">
+            <div class="form-section">
+                <div class="form-group">
+                    <label for="exam-status">Have you appeared for TOEFL or GRE?</label>
+                    <select id="exam-status" onchange="handleExamStatusChange()">
+                        <option value="">-- Select an option --</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <!-- GRE and TOEFL Selection Buttons -->
+                <div class="form-group" id="exam-selection-section" style="display: none;">
+                    <label>Select an exam to view eligible scholarships:</label>
+                    <button id="gre-button" onclick="filterScholarshipsByExam('GRE')">GRE</button>
+                    <button id="toefl-button" onclick="filterScholarshipsByExam('TOEFL')">TOEFL</button>
+                </div>
+
+                <!-- Country Search Section -->
+                <div class="form-group" id="country-search-section" style="display: none;">
+                    <label for="country-search">Enter Country Name:</label>
+                    <input type="text" id="country-search" placeholder="Type a country name..."
+                        onkeyup="filterCountries()">
+                    <ul id="country-list"></ul>
+                </div>
+
+                <!-- Show Scholarships Button -->
+                <div class="form-group" id="show-scholarships-section" style="display: none;">
+                    <button id="show-scholarships-button" onclick="showScholarships()">Show Scholarships</button>
+                </div>
+
+                <!-- Scholarship Results Section -->
+                <div class="results-section" id="scholarship-section" style="display: none;">
+                    <u><h3>Available Scholarships</h3></u>
+                    <div id="scholarship-results"></div>
+                </div>
+            </div>
+
+            <!-- Result Display Section -->
+            <div id="result" class="info"></div>
+        </div>
+    </div>
+
+    <script>
+        const scholarshipsData = {
+            Australia: {
+                GRE: [
+                    { name: "Australia Awards Scholarships", degree: "Undergraduate and postgraduate", details: "Fully funded scholarships for students from eligible countries.", link: "https://www.dfat.gov.au/people-to-people/australia-awards" }
+                ],
+                TOEFL: [
+                    { name: "Endeavour Scholarships", degree: "All levels (from certificate to PhD)", details: "For international students to undertake study, research, or professional development in Australia.", link: "https://internationaleducation.gov.au" }
+                ]
+            },
+            Canada: {
+                GRE: [
+                    { name: "Vanier Canada Graduate Scholarships", degree: "Master’s and Doctoral", details: "Supports doctoral students in various disciplines.", link: "https://vanier.gc.ca" }
+                ],
+                TOEFL: [
+                    { name: "Banting Postdoctoral Fellowships", degree: "Postdoctoral", details: "Provides funding for postdoctoral researchers.", link: "https://banting.fellowships-bourses.gc.ca" }
+                ]
+            },
+            Taiwan: {
+                GRE: [
+                    { name: "Taiwan Scholarship Program", degree: "Undergraduate, Master’s, and Doctoral", details: "Scholarship duration is up to 4 years for undergraduates, 2 years for master’s, and 4 years for doctoral studies.", link: "https://english.moe.gov.tw/lp-24-1.html" }
+                ],
+                TOEFL: [
+                    { name: "NTU Outstanding International Graduate Student Scholarship", degree: "Master’s and PhD", details: "Tuition waivers and monthly stipends for outstanding students.", link: "https://admissions.ntu.edu.tw/overseas-students/" }
+                ]
+            }
+        };
+
+        let selectedCountry = "";
+        let selectedExam = "";
+
+        function handleExamStatusChange() {
+            const examStatus = document.getElementById('exam-status').value;
+            const examSelectionSection = document.getElementById('exam-selection-section');
+            const result = document.getElementById('result');
+
+            if (examStatus === "yes") {
+                examSelectionSection.style.display = 'block';
+                result.innerHTML = "";
+            } else {
+                examSelectionSection.style.display = 'none';
+                document.getElementById('country-search-section').style.display = 'none';
+                document.getElementById('show-scholarships-section').style.display = 'none';
+                document.getElementById('scholarship-section').style.display = 'none';
+                result.innerHTML = `
+                    <h3>How to Take the TOEFL or GRE</h3>
+                    <p>If you haven't taken the TOEFL or GRE yet, here are the steps to get started:</p>
+                    <ul>
+                        <li><strong>For mor info </strong> <a href="file:///E:/pg/subjects/PgSub/icmse.html" >CLICK HERE</a></li>
+                    </ul>
+                `;
+            }
+        }
+
+        function filterScholarshipsByExam(exam) {
+            selectedExam = exam;
+            document.getElementById('country-search-section').style.display = 'block';
+            document.getElementById('result').innerHTML = `<p>Selected Exam: <strong>${exam}</strong></p>`;
+        }
+
+        function filterCountries() {
+            const searchTerm = document.getElementById('country-search').value.toLowerCase();
+            const countryList = document.getElementById('country-list');
+            countryList.innerHTML = "";
+            const filteredCountries = Object.keys(scholarshipsData).filter(country => country.toLowerCase().includes(searchTerm));
+
+            filteredCountries.forEach(country => {
+                countryList.innerHTML += `<li onclick="selectCountry('${country}')"><strong>${country}</strong></li>`;
+            });
+
+            countryList.style.display = filteredCountries.length ? 'block' : 'none';
+        }
+
+        function selectCountry(country) {
+            document.getElementById('country-search').value = country;
+            document.getElementById('country-list').innerHTML = "";
+            selectedCountry = country;
+            document.getElementById('show-scholarships-section').style.display = 'block';
+        }
+
+        function showScholarships() {
+            const scholarshipResults = document.getElementById('scholarship-results');
+            scholarshipResults.innerHTML = "";
+
+            if (scholarshipsData[selectedCountry] && scholarshipsData[selectedCountry][selectedExam]) {
+                scholarshipsData[selectedCountry][selectedExam].forEach(scholarship => {
+                    scholarshipResults.innerHTML += `
+                        <div>
+                            <h4>${scholarship.name}</h4>
+                            <p>${scholarship.degree}</p>
+                            <p>${scholarship.details}</p>
+                            <a href="${scholarship.link}" target="_blank">Learn More</a>
+                        </div>
+                    `;
+                });
+                document.getElementById('scholarship-section').style.display = 'block';
+            } else {
+                scholarshipResults.innerHTML = `<p>No scholarships found for ${selectedExam} in ${selectedCountry}.</p>`;
+                document.getElementById('scholarship-section').style.display = 'block';
+            }
+        }
+    </script>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="left-col">
+                <div class="logo"></div>
+                <div class="social-media">
+                    <a href="#"><img src="E:\pg\images/icon/fb.png"></a>
+                    <a href="#"><img src="E:\pg\images/icon/insta.png"></a>
+                    <a href="#"><img src="E:\pg\images/icon/tt.png"></a>
+                    <a href="#"><img src="E:\pg\images/icon/ytube.png"></a>
+                    <a href="#"><img src="E:\pg\images/icon/linkedin.png"></a>
+                </div><br><br>
+                <p class="rights-text">Copyright © 2024 Created By Srikant Behera, Linmalayraj Kumar All Rights
+                    Reserved.</p>
+                <br>
+                <p><img src="E:\pg\images\icon\location.png">NIST University<br>Berhampur, Odisha-761008</p><br>
+                <p><img src="E:\pg\images\icon\phone.png"> +91-1234-567-890<br><img src="E:\pg\images/icon/mail.png">&nbsp;
+                    learnedonline9419@gmail.com</p>
+            </div>
+            <div class="right-col">
+                <h1 style="color: #fff">Our Newsletter</h1>
+                <div class="border"></div><br>
+                <p>Enter Your Email to get our News and updates.</p>
+                <form class="newsletter-form">
+                    <input class="txtb" type="email" placeholder="Enter Your Email">
+                    <input class="btn" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </footer>
+    

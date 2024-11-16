@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRE & TOEFL Exam Information</title>
+    <link rel="stylesheet" type="text/css" href="icms.css">
+    
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        label, select, button {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #004080;
+        }
+
+        .country-info-section {
+            display: none;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .details-section {
+            margin-top: 30px;
+        }
+        .university {
+            padding: 15px;
+            background-color: #f4f4f9;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .university h3 {
+            margin: 0 0 10px;
+            color: #0056b3;
+        }
+
+        .university p {
+            margin: 5px 0;
+        }
+        .form-section {
+            margin-bottom: 30px;
+        }
+
+        label, select, button {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #004080;
+        }
+
+        .country-info-section, .details-section {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav" id="nav">
+            <div id="learned-logo">
+                <a href="../index.html"><img src="E:\pg\images\icon\Nist.berhampur.logo.jpg" style="width: 120px;"></a>
+            </div>
+            <div>
+                <h1>GRE & TOEFL Scholarship Finder</h1>
+            </div>
+        </div>
+    </header>  
+
+    <div class="container">
+        <div class="form-section">
+            <label for="exam-status">Have you appeared for TOEFL or GRE?</label>
+            <select id="exam-status" onchange="handleExamStatusChange()">
+                <option value="">-- Select an option --</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
+        </div>
+
+        <!-- Exam Selection -->
+        <div id="examSelectionDiv" class="form-section" style="display: none;">
+            <label for="examDropdown">Choose an Exam:</label>
+            <select id="examDropdown" onchange="showExamInfo()">
+                <option value="">Select</option>
+                <option value="gre">GRE</option>
+                <option value="toefl">TOEFL</option>
+            </select>
+        </div>
+
+        <!-- Country Information -->
+        <div id="countryInfoGRE" class="country-info-section">
+            <h2>Countries Accepting GRE Scores</h2>
+            <label for="countryDropdownGRE">Select a Country:</label>
+            <select id="countryDropdownGRE"></select>
+            <button onclick="showDetails('gre')">Show Details</button>
+        </div>
+
+        <div id="countryInfoTOEFL" class="country-info-section">
+            <h2>Countries Accepting TOEFL Scores</h2>
+            <label for="countryDropdownTOEFL">Select a Country:</label>
+            <select id="countryDropdownTOEFL"></select>
+            <button onclick="showDetails('toefl')">Show Details</button>
+        </div>
+
+        <!-- General Information Section -->
+        <div id="countryInfoNo" class="country-info-section">
+            <U><h3>INFORMATION ABOUT GRE AND TOEFL</h3></U>
+            <h2>1. Graduate Record Examination (GRE)</h2>
+            <p>The GRE is a standardized test used for admissions in various graduate programs worldwide. It assesses verbal reasoning, quantitative reasoning, and analytical writing skills.</p>
+            <h3>Important Links:</h3>
+            <ul>
+                <li><a href="https://www.ets.org/gre" target="_blank">Official GRE Website</a></li>
+                <li><a href="https://www.ets.org/gre/revised_general/prepare" target="_blank">GRE Preparation Resources</a></li>
+                <li><a href="https://www.ets.org/gre/subject/about" target="_blank">GRE Subject Tests</a></li>
+            </ul>
+            <h2>2. Test of English as a Foreign Language (TOEFL)</h2>
+            <p>The TOEFL is an English language proficiency test required for non-native English speakers applying to English-speaking universities. It evaluates reading, listening, speaking, and writing skills.</p>
+            <h3>Important Links:</h3>
+            <ul>
+                <li><a href="https://www.ets.org/toefl" target="_blank">Official TOEFL Website</a></li>
+                <li><a href="https://www.ets.org/toefl/test-takers/ibt/prepare.html" target="_blank">TOEFL Preparation Resources</a></li>
+                <li><a href="https://www.ets.org/toefl/test-takers/ibt/register" target="_blank">TOEFL Registration</a></li>
+        </div>
+
+        <!-- University Details Section -->
+        <div id="detailsSection" class="details-section">
+            <h2>University Details</h2>
+            <div id="university-details"></div>
+        </div>
+    </div>
+    <script>
+        const countries = ["Australia", "Canada", "Germany", "India", "United Kingdom", "United States"];
+        const universityData = {
+            gre: {
+                "United States": [
+                    { name: "MIT", program: "MS in CS", link: "https://mit.edu" },
+                    { name: "Stanford University", program: "MBA", link: "https://stanford.edu" }
+                ],
+                Canada: [
+                    { name: "University of Toronto", program: "MSc Data Science", link: "https://utoronto.ca" },
+                    { name: "McGill University", program: "PhD in Physics", link: "https://mcgill.ca" }
+                ]
+            },
+            toefl: {
+                Germany: [
+                    { name: "Technical University of Munich", program: "Master in Electrical Engineering", link: "https://tum.de" },
+                    { name: "Heidelberg University", program: "PhD in Biology", link: "https://uni-heidelberg.de" }
+                ],
+                "United States": [
+                    { name: "Harvard University", program: "MBA", link: "https://harvard.edu" },
+                    { name: "UC Berkeley", program: "Master in AI", link: "https://berkeley.edu" }
+                ]
+            }
+        };
+
+        function handleExamStatusChange() {
+            const status = document.getElementById("exam-status").value;
+            document.getElementById("examSelectionDiv").style.display = status === "yes" ? "block" : "none";
+            document.getElementById("countryInfoNo").style.display = status === "no" ? "block" : "none";
+        }
+
+        function showExamInfo() {
+            const selectedExam = document.getElementById("examDropdown").value;
+            document.getElementById("countryInfoGRE").style.display = selectedExam === "gre" ? "block" : "none";
+            document.getElementById("countryInfoTOEFL").style.display = selectedExam === "toefl" ? "block" : "none";
+            populateCountryDropdown(selectedExam);
+        }
+
+        function populateCountryDropdown(exam) {
+            const dropdown = document.getElementById(exam === "gre" ? "countryDropdownGRE" : "countryDropdownTOEFL");
+            dropdown.innerHTML = `<option value="">Select</option>`;
+            countries.forEach(country => {
+                dropdown.innerHTML += `<option value="${country}">${country}</option>`;
+            });
+        }
+
+        function showDetails(exam) {
+            const selectedCountry = document.getElementById(
+                exam === "gre" ? "countryDropdownGRE" : "countryDropdownTOEFL"
+            ).value;
+
+            const detailsSection = document.getElementById("detailsSection");
+            const detailsDiv = document.getElementById("university-details");
+            detailsDiv.innerHTML = "";
+
+            if (selectedCountry && universityData[exam]?.[selectedCountry]) {
+                universityData[exam][selectedCountry].forEach(university => {
+                    detailsDiv.innerHTML += `
+                        <div class="university">
+                            <h3>${university.name}</h3>
+                            <p><strong>Program:</strong> ${university.program}</p>
+                            <p><a href="${university.link}" target="_blank">Visit Website</a></p>
+                        </div>
+                    `;
+                });
+                detailsSection.style.display = "block";
+            } else {
+                detailsDiv.innerHTML = `<p>No universities found for ${exam.toUpperCase()} in ${selectedCountry}.</p>`;
+                detailsSection.style.display = "block";
+            }
+        }
+    </script>
+    <footer>
+        <div class="footer-container">
+            <div class="left-col">
+                <div class="logo"></div>
+                <div class="social-media">
+                    <a href="#"><img src="E:\pg\images/icon/fb.png"></a>
+                    <a href="#"><img src="E:\pg\images/icon/insta.png"></a>
+                    <a href="#"><img src="E:\pg\images/icon/tt.png"></a>
+                    <a href="#"><img src="E:\pg\images/icon/ytube.png"></a>
+                    <a href="#"><img src="E:\pg\images/icon/linkedin.png"></a>
+                </div><br><br>
+                <p class="rights-text">Copyright © 2024 Created By Srikant Behera, Linmalayraj Kumar All Rights
+                    Reserved.</p>
+                <br>
+                <p><img src="E:\pg\images\icon\location.png">NIST University<br>Berhampur, Odisha-761008</p><br>
+                <p><img src="E:\pg\images\icon\phone.png"> +91-1234-567-890<br><img src="E:\pg\images/icon/mail.png">&nbsp;
+                    learnedonline9419@gmail.com</p>
+            </div>
+            <div class="right-col">
+                <h1 style="color: #fff">Our Newsletter</h1>
+                <div class="border"></div><br>
+                <p>Enter Your Email to get our News and updates.</p>
+                <form class="newsletter-form">
+                    <input class="txtb" type="email" placeholder="Enter Your Email">
+                    <input class="btn" type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+</html>

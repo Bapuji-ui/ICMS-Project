@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #0056b3;
+        }
+
+        .university {
+            padding: 15px;
+            background-color: #f4f4f9;
+            border-radius: 5px;
+            margin-bottom: 15px;
+        }
+
+        .university h3 {
+            margin: 0 0 10px;
+            color: #0056b3;
+        }
+
+        .university p {
+            margin: 5px 0;
+        }
+
+        .btn-back {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            max-width: 200px;
+        }
+
+        .btn-back:hover {
+            background-color: #004080;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>University Details</h1>
+        <div id="university-details"></div>
+        <a href="javascript:history.back()" class="btn-back">Back</a>
+    </div>
+
+    <script>
+        const universityData = {
+            gre: {
+                "United States": [
+                    { name: "MIT", program: "MS in CS", link: "https://mit.edu" },
+                    { name: "Stanford", program: "MBA", link: "https://stanford.edu" }
+                ],
+                "Canada": [
+                    { name: "U of Toronto", program: "MSc Data Science", link: "https://utoronto.ca" }
+                ]
+            },
+            toefl: {
+                "Canada": [
+                    { name: "TUM", program: "Master EE", link: "https://tum.de" }
+                ],
+                "United States": [
+                    { name: "Harvard", program: "MBA", link: "https://harvard.edu" }
+                ]
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const exam = params.get("exam");
+        const country = params.get("country");
+        const detailsDiv = document.getElementById("university-details");
+
+        if (exam && country && universityData[exam]?.[country]) {
+            universityData[exam][country].forEach(university => {
+                detailsDiv.innerHTML += `
+                    <div class="university">
+                        <h3>${university.name}</h3>
+                        <p><strong>Program:</strong> ${university.program}</p>
+                        <p><a href="${university.link}" target="_blank">Visit Website</a></p>
+                    </div>
+                `;
+            });
+        } else {
+            detailsDiv.innerHTML = `<p>No data available for ${exam} in ${country}.</p>`;
+        }
+    </script>
+</body>
+
+</html>

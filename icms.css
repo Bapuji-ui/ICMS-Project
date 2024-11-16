@@ -1,0 +1,217 @@
+
+footer {
+	color: #E5E8EF;
+	background: #000D;
+	padding: 50px 0; 
+}
+
+footer .footer-container {
+	max-width: 1300px;
+	margin: auto;
+	padding: 0 20px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap-reverse;
+}
+
+footer .social-media img{
+	width: 22px;
+}
+
+footer .logo {
+	width: 180px;
+	color: #fff;
+	font-family: 'Montserrat', cursive;
+}
+footer .social-media{
+	margin: 20px 0;
+}
+
+footer .social-media a{
+	color: #001a21;
+	margin-right: 10px;
+	font-size: 22px;
+	text-decoration: none;
+}
+
+footer .right-col h1{
+	font-size: 26px;
+}
+footer .border{
+	width: 100px;
+	height: 4px;
+	background: linear-gradient(to right, #1a3bcd, #0961ef);
+	margin: 2px;
+}
+
+footer .newsletter-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+footer input::placeholder {
+  color: white !important;
+}
+footer .txtb {
+	flex: 1;
+	padding: 18px 40px;
+	font-size: 16px;
+	background: #343A40;
+	border: none;
+	font-weight: 700;
+	outline: none;
+	border-radius: 5px;
+	min-width: 260px;
+	margin-top: 20px;
+	color: white;
+}
+
+footer .btn {
+	margin-top: 20px;
+	padding: 18px 40px;
+	font-size: 16px;
+	color: #f1f1f1;
+	background: linear-gradient(to right, #1a3bcd, #0961ef);
+	border: none;
+	font-weight: 700;
+	outline: none;
+	border-radius: 5px;
+	margin-left: 20px;
+	cursor: pointer;
+	transition: opacity .3s linear;	
+}
+
+footer .btn:hover {
+	opacity: .7;
+}
+  /* General Reset */
+  * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f9;
+	color: #333;
+	line-height: 1.6;
+}
+
+/* Main Container */
+.container {
+	max-width: 800px;
+	margin: 40px auto;
+	background-color: #fff;
+	padding: 30px;
+	border-radius: 10px;
+	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+	margin: 20px auto;
+
+}
+
+h1 {
+	color:white;
+	text-align: center;
+	margin-bottom: 20px;
+	background-color: #0056b3;            
+}
+
+/* Form Section */
+.form-section {
+	margin-bottom: 20px;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+	color: #555;
+}
+
+select, input[type="text"], button {
+	width: 100%;
+	padding: 10px;
+	font-size: 1rem;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-top: 5px;
+}
+
+button {
+	background-color: #007bff;
+	color: #fff;
+	cursor: pointer;
+	font-weight: bold;
+	transition: background-color 0.3s;
+}
+
+button:hover {
+	background-color: #0056b3;
+}
+.active {
+	color: blue;
+	border-radius: 5px;
+	padding: 20px 40px;
+
+}
+/* Country List Dropdown */
+#country-list {
+	list-style: none;
+	padding: 0;
+	margin: 5px 0;
+	max-height: 150px;
+	overflow-y: auto;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #fff;
+	display: none; /* Hide initially */
+}
+
+#country-list li {
+	padding: 10px;
+	cursor: pointer;
+	border-bottom: 1px solid #ddd;
+	transition: background-color 0.3s;
+}
+
+#country-list li:hover {
+	background-color: #f0f0f0;
+}
+
+#country-list li:last-child {
+	border-bottom: none;
+}
+
+/* Scholarship Results Section */
+.results-section {
+	background-color: #e9ecef;
+	padding: 15px;
+	border-radius: 8px;
+	margin-top: 20px;
+}
+
+#scholarship-results div {
+	margin-bottom: 15px;
+}
+
+#scholarship-results h4 {
+	color: #007bff;
+	margin-bottom: 5px;
+}
+
+/* Links */
+a {
+	color: #007bff;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
