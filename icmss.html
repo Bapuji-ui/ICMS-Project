@@ -17,13 +17,14 @@
             <div id="learned-logo">
                 <a href="../index.html"><img src="E:\pg\images\icon\Nist.berhampur.logo.jpg" style="width: 120px;"></a>
             </div>
-            <div>
-                <h1>International Scholarships</h1>
-            </div>
+
         </div>
     </header>
 
     <div class="container">
+        <div>
+            <h1>International Scholarships</h1>
+        </div>
         <div class="content">
             <div class="form-section">
                 <div class="form-group">
@@ -57,7 +58,9 @@
 
                 <!-- Scholarship Results Section -->
                 <div class="results-section" id="scholarship-section" style="display: none;">
-                    <u><h3>Available Scholarships</h3></u>
+                    <u>
+                        <h3>Available Scholarships</h3>
+                    </u>
                     <div id="scholarship-results"></div>
                 </div>
             </div>
@@ -68,31 +71,1019 @@
     </div>
 
     <script>
+
         const scholarshipsData = {
-            Australia: {
-                GRE: [
-                    { name: "Australia Awards Scholarships", degree: "Undergraduate and postgraduate", details: "Fully funded scholarships for students from eligible countries.", link: "https://www.dfat.gov.au/people-to-people/australia-awards" }
-                ],
-                TOEFL: [
-                    { name: "Endeavour Scholarships", degree: "All levels (from certificate to PhD)", details: "For international students to undertake study, research, or professional development in Australia.", link: "https://internationaleducation.gov.au" }
-                ]
+            Japan: {
+    GRE: [
+        {
+            university: "The University of Tokyo",
+            name: "1. MEXT Scholarship",
+            degree: "Master’s and PhD",
+            details: "Full tuition, monthly allowance, and travel expenses.",
+            Contact: "study@tokyo-u.ac.jp",
+            Cost: "No cost (fully funded)",
+            ScholarshipLink: "https://www.studyinjapan.go.jp/en/planning/scholarships/"
+        },
+        {
+            university: "Kyoto University",
+            name: "2. Kyoto University International Program (KGSP)",
+            degree: "Master’s and PhD",
+            details: "Covers tuition fees, living stipend, and travel expenses.",
+            Contact: "intl-edu@kudpc.kyoto-u.ac.jp",
+            Cost: "No cost (fully funded)",
+            ScholarshipLink: "https://www.kyoto-u.ac.jp/en/education-campus/education/graduate-school/international-program"
+        },
+        {
+            university: "Osaka University",
+            name: "3. Osaka University International Scholarship",
+            degree: "Master’s and PhD",
+            details: "Tuition fee waiver and monthly stipend for living expenses.",
+            Contact: "intl-schl@office.osaka-u.ac.jp",
+            Cost: "No cost (fully funded)",
+            ScholarshipLink: "https://www.osaka-u.ac.jp/en/admission/scholarships"
+        }
+    ],
+    TOEFL: [
+        {
+            university: "Waseda University",
+            name: "1. Waseda University Graduate School Scholarships",
+            degree: "Master’s and PhD",
+            details: "Full or partial tuition coverage, monthly living stipend.",
+            Contact: "admissions@waseda.jp",
+            Cost: "Approximately ¥1,000,000 per year (before scholarship application)",
+            ScholarshipLink: "https://www.waseda.jp/top/en"
+        },
+        {
+            university: "Keio University",
+            name: "2. Keio University International Graduate Program Scholarships",
+            degree: "Master’s and PhD",
+            details: "Full tuition fees and living allowance.",
+            Contact: "grad-admissions@keio.jp",
+            Cost: "Approximately ¥1,200,000 per year (before scholarship application)",
+            ScholarshipLink: "https://www.keio.ac.jp/en/admissions/graduate/index.html"
+        },
+        {
+            university: "Sophia University",
+            name: "3. Sophia University International Student Scholarship",
+            degree: "Master’s and PhD",
+            details: "Partial tuition coverage and living allowance.",
+            Contact: "intl-scholarships@sophia.ac.jp",
+            Cost: "Approximately ¥1,500,000 per year (before scholarship application)",
+            ScholarshipLink: "https://www.sophia.ac.jp/eng/admissions/scholarships/index.html"
+        }
+    ]
+}
+
+,
+Greece: {
+    GRE: [
+        {
+            university: "National and Kapodistrian University of Athens",
+            name: "1. IKY Scholarships",
+            degree: "Master’s and PhD",
+            details: "Covers full tuition fees, living expenses, and travel allowances.",
+            Contact: "info@iky.gr",
+            Cost: "No cost (fully funded)",
+            ScholarshipLink: "https://www.iky.gr/en"
+        },
+        {
+            university: "Aristotle University of Thessaloniki",
+            name: "2. Aristotle University Graduate Scholarships",
+            degree: "Master’s and PhD",
+            details: "Covers full tuition fees and living expenses.",
+            Contact: "grad.admissions@auth.gr",
+            Cost: "No cost (fully funded)",
+            ScholarshipLink: "https://www.auth.gr/en"
+        },
+        {
+            university: "University of Crete",
+            name: "3. University of Crete Scholarships",
+            degree: "Master’s and PhD",
+            details: "Partial or full coverage for tuition fees and living expenses.",
+            Contact: "gradschool@uoc.gr",
+            Cost: "No cost (partially funded)",
+            ScholarshipLink: "https://www.uoc.gr/en"
+        }
+    ],
+    TOEFL: [
+        {
+            university: "Athens University of Economics and Business",
+            name: "1. AUEB Scholarships for International Students",
+            degree: "Master’s and PhD",
+            details: "Full tuition fees and a living stipend.",
+            Contact: "graduate@aueb.gr",
+            Cost: "Approximately €6,000 per year (before scholarship application)",
+            ScholarshipLink: "https://www.aueb.gr/en"
+        },
+        {
+            university: "University of Thessaloniki",
+            name: "2. International Master’s Program Scholarships",
+            degree: "Master’s",
+            details: "Full or partial tuition coverage and monthly stipend.",
+            Contact: "international@auth.gr",
+            Cost: "Approximately €4,000 per year (before scholarship application)",
+            ScholarshipLink: "https://www.auth.gr/en"
+        },
+        {
+            university: "University of Athens",
+            name: "3. Athens University of Economics and Business Scholarships",
+            degree: "Master’s and PhD",
+            details: "Partial tuition coverage and living allowance.",
+            Contact: "info@uoa.gr",
+            Cost: "Approximately €5,000 per year (before scholarship application)",
+            ScholarshipLink: "https://www.uoa.gr/en"
+        }
+    ]
+}
+  ,
+    Spain: {
+        GRE: [
+            {
+                university: "University of Barcelona",
+                name: "1. Santander Scholarships",
+                degree: "Master’s and PhD",
+                details: "Covers tuition fees, living stipend, and travel expenses.",
+                Contact: "international@ub.edu",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.ub.edu"
             },
-            Canada: {
-                GRE: [
-                    { name: "Vanier Canada Graduate Scholarships", degree: "Master’s and Doctoral", details: "Supports doctoral students in various disciplines.", link: "https://vanier.gc.ca" }
-                ],
-                TOEFL: [
-                    { name: "Banting Postdoctoral Fellowships", degree: "Postdoctoral", details: "Provides funding for postdoctoral researchers.", link: "https://banting.fellowships-bourses.gc.ca" }
-                ]
-            },
-            Taiwan: {
-                GRE: [
-                    { name: "Taiwan Scholarship Program", degree: "Undergraduate, Master’s, and Doctoral", details: "Scholarship duration is up to 4 years for undergraduates, 2 years for master’s, and 4 years for doctoral studies.", link: "https://english.moe.gov.tw/lp-24-1.html" }
-                ],
-                TOEFL: [
-                    { name: "NTU Outstanding International Graduate Student Scholarship", degree: "Master’s and PhD", details: "Tuition waivers and monthly stipends for outstanding students.", link: "https://admissions.ntu.edu.tw/overseas-students/" }
-                ]
+            {
+                university: "Pompeu Fabra University",
+                name: "2. UPF International Scholarships",
+                degree: "Master’s",
+                details: "Full tuition fees and a living allowance.",
+                Contact: "admissions@upf.edu",
+                Cost: "Approximately €6,000 per year (before scholarship application)",
+                ScholarshipLink: "https://www.upf.edu"
             }
+        ],
+        TOEFL: [
+            {
+                university: "Complutense University of Madrid",
+                name: "1. UCM International Scholarships",
+                degree: "Master’s and PhD",
+                details: "Partial tuition coverage and living allowance.",
+                Contact: "admissions@ucm.es",
+                Cost: "Approximately €4,000 per year (before scholarship application)",
+                ScholarshipLink: "https://www.ucm.es"
+            },
+            {
+                university: "Pompeu Fabra University",
+                name: "2. Pompeu Fabra University Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Covers tuition fees and offers monthly stipend for living expenses.",
+                Contact: "international@upf.edu",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.upf.edu"
+            }
+        ]
+    },
+    Italy: {
+        GRE: [
+            {
+                university: "University of Bologna",
+                name: "1. Unibo Action 1&2 Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition fees, living stipend, and travel allowance.",
+                Contact: "international@unibo.it",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.unibo.it/en"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "Sapienza University of Rome",
+                name: "1. Sapienza International Scholarships",
+                degree: "Master’s",
+                details: "Full tuition coverage and living stipend.",
+                Contact: "international@uniroma1.it",
+                Cost: "Approximately €5,000 per year (before scholarship application)",
+                ScholarshipLink: "https://www.uniroma1.it/en"
+            }
+        ]
+    },
+    France: {
+        GRE: [
+            {
+                university: "Université PSL (Paris Sciences et Lettres)",
+                name: "1. PSL Excellence Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition coverage, monthly stipend, and travel expenses.",
+                Contact: "admissions@psl.eu",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.psl.eu"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "University of Paris-Saclay",
+                name: "1. Paris-Saclay Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition fees and living allowance.",
+                Contact: "graduate@universite-paris-saclay.fr",
+                Cost: "Approximately €8,000 per year (before scholarship application)",
+                ScholarshipLink: "https://www.universite-paris-saclay.fr"
+            }
+        ]
+    },
+    Belgium: {
+        GRE: [
+            {
+                university: "KU Leuven",
+                name: "1. KU Leuven International Scholarships",
+                degree: "Master’s and PhD",
+                details: "Covers full tuition fees and living expenses.",
+                Contact: "international@kuleuven.be",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.kuleuven.be"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "Ghent University",
+                name: "1. Ghent University Top-up Grants",
+                degree: "Master’s",
+                details: "Partial tuition coverage and living allowance.",
+                Contact: "admissions@ugent.be",
+                Cost: "Approximately €3,000 per year (before scholarship application)",
+                ScholarshipLink: "https://www.ugent.be"
+            }
+        ]
+    },
+    Romania: {
+        GRE: [
+            {
+                university: "University of Bucharest",
+                name: "1. University of Bucharest Scholarships",
+                degree: "Master’s and PhD",
+                details: "Tuition fee waiver and monthly stipend.",
+                Contact: "admissions@unibuc.ro",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.unibuc.ro"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "Babeș-Bolyai University",
+                name: "1. UBB International Scholarships",
+                degree: "Master’s",
+                details: "Partial tuition coverage and living stipend.",
+                Contact: "admissions@ubbcluj.ro",
+                Cost: "Approximately €2,000 per year (before scholarship application)",
+                ScholarshipLink: "https://www.ubbcluj.ro"
+            }
+        ]
+    },
+    Poland: {
+        GRE: [
+            {
+                university: "University of Warsaw",
+                name: "1. University of Warsaw Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition coverage, living stipend, and travel expenses.",
+                Contact: "admissions@uw.edu.pl",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.uw.edu.pl"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "Jagiellonian University",
+                name: "1. JU International Scholarships",
+                degree: "Master’s",
+                details: "Partial tuition fees and living allowance.",
+                Contact: "admissions@uj.edu.pl",
+                Cost: "Approximately €4,000 per year (before scholarship application)",
+                ScholarshipLink: "https://www.uj.edu.pl"
+            }
+        ]
+    },
+    SouthKorea: {
+        GRE: [
+            {
+                university: "Seoul National University",
+                name: "1. SNU Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Covers full tuition fees, living stipend, and travel expenses.",
+                Contact: "admissions@snu.ac.kr",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.snu.ac.kr"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "KAIST (Korea Advanced Institute of Science and Technology)",
+                name: "1. KAIST International Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition fees and living allowance.",
+                Contact: "admissions@kaist.ac.kr",
+                Cost: "Approximately KRW 10,000,000 per year (before scholarship application)",
+                ScholarshipLink: "https://www.kaist.ac.kr"
+            }
+        ]
+    },
+    Germany: {
+        GRE: [
+            {
+                university: "LMU Munich",
+                name: "1. LMU Munich International Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition coverage, living stipend, and travel allowance.",
+                Contact: "international@lmu.de",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.en.uni-muenchen.de"
+            },
+            {
+                university: "Heidelberg University",
+                name: "2. Heidelberg University Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Tuition fee waiver and monthly living stipend.",
+                Contact: "gradschool@uni-heidelberg.de",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.uni-heidelberg.de/en"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "University of Freiburg",
+                name: "1. Freiburg International Scholarships",
+                degree: "Master’s",
+                details: "Partial tuition coverage and living allowance.",
+                Contact: "admissions@uni-freiburg.de",
+                Cost: "Approximately €3,000 per year (before scholarship application)",
+                ScholarshipLink: "https://www.uni-freiburg.de"
+            }
+        ]
+    },
+    Singapore: {
+        GRE: [
+            {
+                university: "National University of Singapore",
+                name: "1. NUS Research Scholarship",
+                degree: "Master’s and PhD",
+                details: "Full tuition, monthly allowance, and travel expenses.",
+                Contact: "admissions@nus.edu.sg",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.nus.edu.sg"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "Nanyang Technological University",
+                name: "1. NTU International Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition fees, living stipend, and travel expenses.",
+                Contact: "admissions@ntu.edu.sg",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.ntu.edu.sg"
+            }
+        ]
+    },
+    Netherlands: {
+        GRE: [
+            {
+                university: "Leiden University",
+                name: "1. Leiden University Excellence Scholarships",
+                degree: "Master’s",
+                details: "Full tuition fees and living stipend.",
+                Contact: "graduateadmissions@leidenuniv.nl",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.leiden.edu"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "University of Amsterdam",
+                name: "1. Amsterdam Merit Scholarships",
+                degree: "Master’s",
+                details: "Partial tuition fees and living allowance.",
+                Contact: "admissions@uva.nl",
+                Cost: "Approximately €3,000 per year (before scholarship application)",
+                ScholarshipLink: "https://www.uva.nl"
+            }
+        ]
+    },
+    Finland: {
+        GRE: [
+            {
+                university: "University of Helsinki",
+                name: "1. Helsinki University Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition coverage and living stipend.",
+                Contact: "international@helsinki.fi",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.helsinki.fi"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "Aalto University",
+                name: "1. Aalto University International Scholarships",
+                degree: "Master’s",
+                details: "Full tuition and living expenses coverage.",
+                Contact: "admissions@aalto.fi",
+                Cost: "Approximately €8,000 per year (before scholarship application)",
+                ScholarshipLink: "https://www.aalto.fi"
+            }
+        ]
+    },
+    UnitedKingdom: {
+        GRE: [
+            {
+                university: "University of Oxford",
+                name: "1. Oxford Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition fees, living stipend, and travel expenses.",
+                Contact: "graduate.admissions@admin.ox.ac.uk",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.ox.ac.uk"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "University of Cambridge",
+                name: "1. Cambridge International Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition and living allowance.",
+                Contact: "graduate.admissions@admin.cam.ac.uk",
+                Cost: "Approximately £10,000 per year (before scholarship application)",
+                ScholarshipLink: "https://www.cam.ac.uk"
+            }
+        ]
+    },
+    Ireland: {
+        GRE: [
+            {
+                university: "Trinity College Dublin",
+                name: "1. TCD Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Covers full tuition fees, living stipend, and travel allowance.",
+                Contact: "gradadmissions@tcd.ie",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.tcd.ie"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "University College Dublin",
+                name: "1. UCD International Scholarships",
+                degree: "Master’s",
+                details: "Partial tuition coverage and living allowance.",
+                Contact: "admissions@ucd.ie",
+                Cost: "Approximately €4,000 per year (before scholarship application)",
+                ScholarshipLink: "https://www.ucd.ie"
+            }
+        ]
+    },
+    Canada: {
+        GRE: [
+            {
+                university: "University of Toronto",
+                name: "1. University of Toronto Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition, monthly allowance, and travel expenses.",
+                Contact: "gradschl@utoronto.ca",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.sgs.utoronto.ca"
+            },
+            {
+                university: "McGill University",
+                name: "2. McGill Graduate Excellence Fellowship",
+                degree: "Master’s and PhD",
+                details: "Covers full tuition, living stipend, and travel expenses.",
+                Contact: "graduateadmissions@mcgill.ca",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.mcgill.ca/students"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "University of British Columbia",
+                name: "1. UBC International Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition fees, living stipend, and research allowance.",
+                Contact: "grad.ask@ubc.ca",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://you.ubc.ca"
+            }
+        ]
+    },
+    UnitedStates: {
+        GRE: [
+            {
+                university: "Harvard University",
+                name: "1. Harvard Graduate School Fellowships",
+                degree: "Master’s and PhD",
+                details: "Full tuition, living stipend, and travel allowance.",
+                Contact: "gradadmissions@harvard.edu",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.harvard.edu"
+            },
+            {
+                university: "Stanford University",
+                name: "2. Stanford Graduate Fellowships",
+                degree: "Master’s and PhD",
+                details: "Tuition fee waiver, monthly stipend, and research allowance.",
+                Contact: "gradadmissions@stanford.edu",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.stanford.edu"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "University of California, Berkeley",
+                name: "1. UC Berkeley International Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition fees and living expenses.",
+                Contact: "gradadmissions@berkeley.edu",
+                Cost: "Approximately $10,000 per year (before scholarship)",
+                ScholarshipLink: "https://www.berkeley.edu"
+            }
+        ]
+    },
+    Belgium: {
+        GRE: [
+            {
+                university: "KU Leuven",
+                name: "1. KU Leuven International Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition, living allowance, and travel expenses.",
+                Contact: "international@kuleuven.be",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.kuleuven.be"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "Ghent University",
+                name: "1. Ghent University Scholarships",
+                degree: "Master’s",
+                details: "Full or partial tuition coverage and living stipend.",
+                Contact: "info@ugent.be",
+                Cost: "Approximately €4,000 per year (before scholarship application)",
+                ScholarshipLink: "https://www.ugent.be"
+            }
+        ]
+    },
+    HongKong: {
+        GRE: [
+            {
+                university: "The University of Hong Kong",
+                name: "1. HKU International Research Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition fees, monthly allowance, and research funding.",
+                Contact: "gradschol@hku.hk",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.hku.hk"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "Chinese University of Hong Kong",
+                name: "1. CUHK International Scholarships",
+                degree: "Master’s and PhD",
+                details: "Partial tuition coverage and living stipend.",
+                Contact: "admissions@cuhk.edu.hk",
+                Cost: "Approximately HK$80,000 per year (before scholarship)",
+                ScholarshipLink: "https://www.cuhk.edu.hk"
+            }
+        ]
+    },
+    Iceland: {
+        GRE: [
+            {
+                university: "University of Iceland",
+                name: "1. University of Iceland Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Tuition fee waiver and monthly stipend.",
+                Contact: "graduate@hi.is",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.hi.is"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "Reykjavik University",
+                name: "1. Reykjavik University Scholarships",
+                degree: "Master’s",
+                details: "Full tuition coverage and living stipend.",
+                Contact: "admissions@ru.is",
+                Cost: "Approximately ISK 500,000 per year (before scholarship)",
+                ScholarshipLink: "https://www.ru.is"
+            }
+        ]
+    },
+    Mexico: {
+        GRE: [
+            {
+                university: "National Autonomous University of Mexico",
+                name: "1. UNAM Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition, living allowance, and travel allowance.",
+                Contact: "admissions@unam.mx",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.unam.mx"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "Monterrey Institute of Technology",
+                name: "1. ITESM International Scholarships",
+                degree: "Master’s",
+                details: "Full tuition fees and living allowance.",
+                Contact: "gradadmissions@itesm.mx",
+                Cost: "Approximately MXN 200,000 per year (before scholarship)",
+                ScholarshipLink: "https://www.itesm.mx"
+            }
+        ]
+    },
+    Colombia: {
+        GRE: [
+            {
+                university: "University of the Andes",
+                name: "1. Andes Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition, living stipend, and research allowance.",
+                Contact: "admissions@uniandes.edu.co",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.uniandes.edu.co"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "National University of Colombia",
+                name: "1. National University of Colombia Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition, living stipend, and travel allowance.",
+                Contact: "gradadmissions@unal.edu.co",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.unal.edu.co"
+            }
+        ]
+    },
+    Argentina: {
+        GRE: [
+            {
+                university: "University of Buenos Aires",
+                name: "1. UBA International Scholarships",
+                degree: "Master’s and PhD",
+                details: "Covers tuition fees, living stipend, and travel expenses.",
+                Contact: "grad@uba.ar",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.uba.ar"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "National University of La Plata",
+                name: "1. UNLP Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Tuition fee waiver and monthly allowance for living expenses.",
+                Contact: "postgrado@unlp.edu.ar",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.unlp.edu.ar"
+            }
+        ]
+    },
+    Cuba: {
+        GRE: [
+            {
+                university: "University of Havana",
+                name: "1. University of Havana Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition, living allowance, and research expenses.",
+                Contact: "gradschol@uh.edu.cu",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.uh.cu"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "Central University of Las Villas",
+                name: "1. Central University Scholarships",
+                degree: "Master’s",
+                details: "Full or partial tuition coverage and living stipend.",
+                Contact: "admissions@uclv.edu.cu",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.uclv.edu.cu"
+            }
+        ]
+    },
+    Jamaica: {
+        GRE: [
+            {
+                university: "University of the West Indies",
+                name: "1. UWI Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Tuition fee waiver, monthly allowance, and research funding.",
+                Contact: "gradscholar@uwi.edu",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.uwi.edu"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "University of Technology, Jamaica",
+                name: "1. UTech Graduate Scholarships",
+                degree: "Master’s",
+                details: "Tuition coverage and living stipend.",
+                Contact: "admissions@utech.edu.jm",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.utech.edu.jm"
+            }
+        ]
+    },
+    Bahamas: {
+        GRE: [
+            {
+                university: "University of the Bahamas",
+                name: "1. University of Bahamas Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition fees and living expenses.",
+                Contact: "admissions@ub.edu.bs",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.ub.edu.bs"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "College of the Bahamas",
+                name: "1. COB Graduate Scholarships",
+                degree: "Master’s",
+                details: "Partial tuition coverage and living stipend.",
+                Contact: "gradadmissions@cob.edu.bs",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.cob.edu.bs"
+            }
+        ]
+    },
+    Israel: {
+        GRE: [
+            {
+                university: "Tel Aviv University",
+                name: "1. Tel Aviv University Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition, living stipend, and travel expenses.",
+                Contact: "gradadmissions@tauex.tau.ac.il",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.tau.ac.il"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "Hebrew University of Jerusalem",
+                name: "1. Hebrew University International Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full or partial tuition coverage, living allowance.",
+                Contact: "admissions@huji.ac.il",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.huji.ac.il"
+            }
+        ]
+    },
+    Egypt: {
+        GRE: [
+            {
+                university: "Cairo University",
+                name: "1. Cairo University Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition, living stipend, and travel allowance.",
+                Contact: "gradadmissions@cu.edu.eg",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.cu.edu.eg"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "American University in Cairo",
+                name: "1. AUC Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full or partial tuition coverage, living stipend.",
+                Contact: "admissions@aucegypt.edu",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.aucegypt.edu"
+            }
+        ]
+    },
+    SouthAfrica: {
+        GRE: [
+            {
+                university: "University of Cape Town",
+                name: "1. UCT Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Covers tuition fees, living stipend, and research allowance.",
+                Contact: "grad@uct.ac.za",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.uct.ac.za"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "University of the Witwatersrand",
+                name: "1. Wits University Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Tuition fee waiver, monthly stipend.",
+                Contact: "postgraduate@wits.ac.za",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.wits.ac.za"
+            }
+        ]
+    },
+    Nigeria: {
+        GRE: [
+            {
+                university: "University of Lagos",
+                name: "1. University of Lagos Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition and living allowance.",
+                Contact: "admissions@unilag.edu.ng",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.unilag.edu.ng"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "University of Nigeria, Nsukka",
+                name: "1. UNN Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full or partial tuition coverage, living stipend.",
+                Contact: "postgraduate@unn.edu.ng",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.unn.edu.ng"
+            }
+        ]
+    },
+    Uganda: {
+        GRE: [
+            {
+                university: "Makerere University",
+                name: "1. Makerere University Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full tuition, living stipend, and research expenses.",
+                Contact: "graduate@mak.ac.ug",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.mak.ac.ug"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "Uganda Christian University",
+                name: "1. UCU Graduate Scholarships",
+                degree: "Master’s",
+                details: "Partial tuition coverage and living allowance.",
+                Contact: "admissions@ucu.ac.ug",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.ucu.ac.ug"
+            }
+        ]
+    },
+    Maldives: {
+        GRE: [
+            {
+                university: "Maldives National University",
+                name: "1. MNU Graduate Scholarships",
+                degree: "Master’s",
+                details: "Covers tuition and living expenses.",
+                Contact: "admissions@mnu.edu.mv",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.mnu.edu.mv"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "The Maldives Islamic University",
+                name: "1. MIU Graduate Scholarships",
+                degree: "Master’s",
+                details: "Full or partial tuition and living allowance.",
+                Contact: "info@miu.edu.mv",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.miu.edu.mv"
+            }
+        ]
+    },
+    Nepal: {
+        GRE: [
+            {
+                university: "Tribhuvan University",
+                name: "1. Tribhuvan University Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Tuition fee waiver and living stipend.",
+                Contact: "grad@tribhuvan.edu.np",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.tribhuvan.edu.np"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "Kathmandu University",
+                name: "1. Kathmandu University Graduate Scholarships",
+                degree: "Master’s",
+                details: "Partial tuition and living allowance.",
+                Contact: "admissions@ku.edu.np",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.ku.edu.np"
+            }
+        ]
+    },
+    Myanmar: {
+        GRE: [
+            {
+                university: "University of Yangon",
+                name: "1. University of Yangon Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Covers full tuition fees, living stipend, and research allowance.",
+                Contact: "grad@yu.edu.mm",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.yu.edu.mm"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "Dagon University",
+                name: "1. Dagon University Graduate Scholarships",
+                degree: "Master’s",
+                details: "Full or partial tuition coverage and living allowance.",
+                Contact: "admissions@du.edu.mm",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.du.edu.mm"
+            }
+        ]
+    },
+    Thailand: {
+        GRE: [
+            {
+                university: "Chulalongkorn University",
+                name: "1. Chulalongkorn University Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Covers tuition fees, monthly stipend, and research funds.",
+                Contact: "grad@chula.ac.th",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.chula.ac.th"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "Mahidol University",
+                name: "1. Mahidol University Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full or partial tuition coverage, living stipend.",
+                Contact: "grad@mahidol.ac.th",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.mahidol.ac.th"
+            }
+        ]
+    },
+    Malaysia: {
+        GRE: [
+            {
+                university: "University of Malaya",
+                name: "1. University of Malaya Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Covers tuition fees, living stipend, and travel allowance.",
+                Contact: "admissions@um.edu.my",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.um.edu.my"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "Universiti Teknologi Malaysia",
+                name: "1. UTM Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Full or partial tuition coverage, monthly stipend.",
+                Contact: "grad@utm.my",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.utm.my"
+            }
+        ]
+    },
+    Oman: {
+        GRE: [
+            {
+                university: "Sultan Qaboos University",
+                name: "1. Sultan Qaboos University Graduate Scholarships",
+                degree: "Master’s and PhD",
+                details: "Covers full tuition, living stipend, and research expenses.",
+                Contact: "grad@SQU.edu.om",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.squ.edu.om"
+            }
+        ],
+        TOEFL: [
+            {
+                university: "Dhofar University",
+                name: "1. Dhofar University Graduate Scholarships",
+                degree: "Master’s",
+                details: "Partial tuition coverage and living allowance.",
+                Contact: "admissions@du.edu.om",
+                Cost: "No cost (fully funded)",
+                ScholarshipLink: "https://www.du.edu.om"
+            }
+        ]
+    }
+
+
+
         };
 
         let selectedCountry = "";
@@ -156,9 +1147,14 @@
                     scholarshipResults.innerHTML += `
                         <div>
                             <h4>${scholarship.name}</h4>
+                            <p>${scholarship.university}</p>
                             <p>${scholarship.degree}</p>
                             <p>${scholarship.details}</p>
-                            <a href="${scholarship.link}" target="_blank">Learn More</a>
+                            <p>${scholarship.Cost}</p>
+
+                            <p>${scholarship.Contact}</p>
+
+                            <a href="${scholarship.ScholarshipLink}" target="_blank">Learn More</a>
                         </div>
                     `;
                 });
@@ -186,7 +1182,8 @@
                     Reserved.</p>
                 <br>
                 <p><img src="E:\pg\images\icon\location.png">NIST University<br>Berhampur, Odisha-761008</p><br>
-                <p><img src="E:\pg\images\icon\phone.png"> +91-1234-567-890<br><img src="E:\pg\images/icon/mail.png">&nbsp;
+                <p><img src="E:\pg\images\icon\phone.png"> +91-1234-567-890<br><img
+                        src="E:\pg\images/icon/mail.png">&nbsp;
                     learnedonline9419@gmail.com</p>
             </div>
             <div class="right-col">
@@ -200,4 +1197,5 @@
             </div>
         </div>
     </footer>
-    
+</body>
+</html>
