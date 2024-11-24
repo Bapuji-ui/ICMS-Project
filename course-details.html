@@ -58,9 +58,6 @@
 			</div>
 			<div class="switch-tab" id="switch-tab" onclick="switchTAB()"><img src="../images/icon/menu.png"></div>
 			<ul id="list-switch">
-				
-
-
 			</ul>
 			<div class="search" id="search-switch">
 				<input type="text" placeholder="Search" class="srch"><button id="srchbtn"><img
@@ -71,10 +68,7 @@
 
     <div class="container">
         <h1>Course Details</h1>
-        <div class="course-details" id="course-details">
-            <!-- Course details will be inserted here -->
-        </div>
-        <a href="country.html" class="back-link">Back to Universities</a>
+        <a href="E:\pg\subjects\PgSub\icmsc.html" class="back-link">Back to Universities</a>
     </div>
 
     <script>
@@ -83,21 +77,811 @@
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param);
         }
-
+        const courses = {
+            "Coca Cultivation and Cultural Significance": {
+                description: "Coca Cultivation and Cultural Significance is a specialized course exploring the agricultural practices, historical significance, and socio-economic impact of coca cultivation. It delves into traditional farming techniques, cultural rituals associated with coca plants, and their role in indigenous communities.",
+                duration: "Typically 6 months to 1 year, depending on the program structure and depth of study.",
+                prerequisites: "individuals with prior experience in environmental sciences, anthropology, or community development",
+                study_materials:"https://research.reading.ac.uk/coca-cocaine-bolivia-peru/wp-content/uploads/sites/127/2021/07/A-history-of-coca-Grisaffi-Website-V2.pdf",
+                Youtube:"https://www.youtube.com/watch?v=ngDttrwZ0q4"
+            },
+            "Ecological Conservation in the Amazon": {
+                description: "Study the principles of electrical systems, circuits, and electronics.",
+                duration: "4 years",
+                prerequisites: "High school physics and mathematics",
+                study_materials:"https://www.theamazonwewant.org/wp-content/uploads/2022/05/Chapter-4-Bound-May-9.pdf",
+                Youtube:"https://www.youtube.com/watch?v=ojv_SERYcRA"
+            },
+            "Traditional Paraguayan Music Performance": {
+                description: "Explore core business concepts, management strategies, and financial principles.",
+                duration: "3 years",
+                prerequisites: "Basic understanding of economics",
+                study_materials:"https://repositories.lib.utexas.edu/bitstream/handle/2152/1834/colmana29123.pdf",
+                Youtube:"https://www.youtube.com/watch?v=mgQtcU4zbZs"
+            },
+            "Paraguayan Literature and Creative Writing": {
+                description: "Understand human behavior and mental processes through scientific methods.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://librarybeta.temple.edu/form-library/browse/_pdfs/lost_cities_of_paraguay.pdf",
+                Youtube:""
+            },
+            "Tropical Medicine": {
+                description: "	Specialized training in diseases prevalent in tropical regions, focusing on public health responses.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://wikitropica.org/wp-content/uploads/2023/06/Lecture-Notes-on-Tropical-Medicine_2023-B.pdf",
+                Youtube:"https://www.youtube.com/watch?v=eyQ9Hd1rmV8"
+            },
+            "Sustainable Fashion Design": {
+                description: "Specialized training in diseases prevalent in tropical regions, focusing on public health responses.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://labourbehindthelabel.net/wp-content/uploads/2015/10/sustainable-fashion-handbook-full-version.pdf",
+                Youtube:"https://www.youtube.com/watch?v=87UzOBOfGKo"
+             },
+             "Bilingual Education and Multiculturalism": {
+                description: "Prepares educators to work in diverse and bilingual environments, emphasizing cultural sensitivity.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://oldcatalog.csus.edu/cat96/cat96/edbm.pdf",
+                Youtube:"https://www.youtube.com/watch?v=Q-0NYZjfWNE"
+             },
+             "Logistics and Supply Chain Management": {
+                description: "•	Tailored for professionals in the logistics sector, given Panama’s significant shipping industry.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"•	https://backup.pondiuni.edu.in/sites/default/files/Logistics%20Supply%20Chain%20Mgt200813.pdf",
+                Youtube:"•	https://www.youtube.com/watch?v=fzKGxvF_NPU"
+             },
+             "Mayan Studies and Indigenous Cultures": {
+                description: "•	Focuses on the history, languages, and cultural practices of the Mayan civilization and contemporary indigenous communities.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://www.coreknowledge.org/wp-content/uploads/2016/11/G5_U2_Teacher-Guide.pdf",
+                Youtube:"https://www.youtube.com/watch?v=3yQLqGtkHRM"
+             },
+             "Culinary Arts and Traditional Honduran Cuisine": {
+                description: "•	Offers training in preparing traditional dishes and promoting Honduran culinary heritage.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://www.scribd.com/document/373376859/hoduras-docx",
+                Youtube:"https://www.youtube.com/watch?v=4M8_EE-Kzp0"
+             },
+             "Peace Studies and Conflict Resolution": {
+                description: "•	Specialized training in peacebuilding and conflict resolution, reflecting the countrys history and social dynamics.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"•	https://nou.edu.ng/coursewarecontent/GST%20202%20FUNDAMENTALS%20OF%20PEACE%20STUDIES%20AND%20CONFLICT.pdf",
+                Youtube:"•	https://www.youtube.com/watch?v=9anguZV9U6U"
+             },
+             "Hispanic Literature and Cultural Studies": {
+                description: "•	Analyzes literature and cultural movements specific to the Hispanic world, with a focus on Nicaragua.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"•	https://www.stonybrook.edu/sb/graduatebulletin/current/courses/spn/index.pdf",
+                Youtube:""
+             },
+             "Film and Television Production": {
+                description: "•	Offers specialized training in filmmaking techniques, storytelling, and cinematography, with an emphasis on Latin American narratives.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://catalog.depaul.edu/course-descriptions/film/film.pdf",
+                Youtube:"•	https://www.youtube.com/watch?v=3M6Y7JExI3w"
+             },
+             "Agroecology and Sustainable Agriculture": {
+                description: "•	Focuses on environmentally friendly agricultural practices relevant to the Dominican Republic's ecosystems.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"•	https://agroeco.org/wp-content/uploads/2015/11/Agroecology-training-manual-TWN-SOCLA.pdf",
+                Youtube:"https://www.youtube.com/watch?v=YxBGZ77cLMU"
+             },
+             "International Business with a focus on Caribbean Trade": {
+                description: "•	Offers specialized training in international business practices specific to the Caribbean market.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://measiim.edu.in/myweb/uploads/2022/05/PMFEB.pdf",
+                Youtube:"•	https://www.youtube.com/watch?v=_5Tc7e2cML4"
+             },
+             "Agribusiness Management": {
+                description: "A business course with an emphasis on agriculture, covering both the production side and business management in the agriculture industry.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://zalamsyah.wordpress.com/wp-content/uploads/2018/02/6-agribusiness-management.pdf",
+                Youtube:"https://www.youtube.com/watch?v=0eGQ6h4MkM8&list=PL_YXsNANo2M5cx56ONWGvyNC4jdleLhfz"
+             },
+             "Digital Filmmaking ": {
+                description: "Specialized in digital filmmaking, including courses on editing, scriptwriting, directing, and production.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://digilib.stekom.ac.id/assets/dokumen/ebook/feb_34fa534c70d13c24656a05f155d3a756b8b27117_1653920130.pdf",
+                Youtube:"https://www.youtube.com/watch?v=QQn_MGrhljc&list=PLDSPmtop8W4wKTA8tVEarfE0UQLKPPSJk"
+             },
+             "Tea Science": {
+                description: "This program explores the science, cultivation, and business of tea, with a focus on tea culture in China, as well as tea production and export.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://link.springer.com/book/10.1007/978-94-011-2326-6",
+                Youtube:"https://www.youtube.com/watch?v=dTHansLrH0M"
+             },
+             "Urban Planning and Development": {
+                description: "A specialized course focused on China's rapid urbanization, urban infrastructure, smart cities, and sustainable urban development. It includes real-world case studies on Chinese megacities.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://uccrn.ei.columbia.edu/sites/default/files/content/pubs/ARC3.2-PDF-Chapter-5-Urban-Planning-and-Design-wecompress.com_.pdf",
+                Youtube:"https://www.youtube.com/watch?v=q_XmlG3CwNk&list=PLLy_2iUCG87AAaDRVrD02Y1z44OXt5shB"
+             },
+             "Belt and Road Initiative Focus": {
+                description: "Focuses on China's Belt and Road Initiative (BRI), covering its economic, political, and international relations aspects. It explores China's global infrastructure projects and their implications.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://www.researchgate.net/publication/360827347_belt_and_road_book_by_Tian_and_Chen",
+                Youtube:"https://www.youtube.com/watch?v=Wg0MXJkNys4"
+             },
+             "Game Design and Game Development": {
+                description: ": South Korea is a global leader in gaming. This course offers specialized training in game design, development, and programming. It covers virtual reality (VR), augmented reality (AR), and esports-related technologies.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://gamifique.wordpress.com/wp-content/uploads/2011/11/5-game-design-theory-and-practice.pdf",
+                Youtube:"https://www.youtube.com/watch?v=VNSE4ienCq8&list=PLdOT12odxrUrUExBUuM5KoN0fAnOdzH1L"
+             },
+             "Korean Martial Arts and Taekwondo Studies": {
+                description: "Focuses on the history, philosophy, and practice of Korean martial arts like Taekwondo. The course combines physical training with research in martial arts theory, leadership, and sports management.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://kildaretaekwondo.com/wp-content/docs/Taekwon-Do%20-%20The%20Art%20of%20Self%20Defence%20(1965)%20by%20Gen%20Choi.pdf",
+                Youtube:"https://www.youtube.com/watch?v=NVMXXD6TWoQ"
+             },
+             "Green Energy Technology": {
+                description: "Focuses on renewable energy technologies such as solar power, wind energy, and energy storage systems. It covers green energy solutions, with a focus on sustainability and innovation in energy resources.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://www.researchgate.net/publication/261986110_Green_Energy_and_Technology",
+                Youtube:"https://www.youtube.com/watch?v=kGhJCYmYFMk&list=PLb5SyhPhDyTehqo1rU6iqhTjeyR_PWMak"
+             },
+             "Journalism and Media Studies": {
+                description: "This program focuses on journalism with a strong emphasis on media in Asia, covering topics such as global media trends, investigative journalism, digital media, and news reporting in Hong Kong, China, and the broader Asia-Pacific region",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://dde.pondiuni.edu.in/files/StudyMaterials/PG/MAEnglish/2year/MAEG2003BasicsofJournalism.pdf",
+                Youtube:"https://www.youtube.com/watch?v=3zBDil6cU8U&list=PL3fpHfLU07mxEmovbA0zvovl-tAEFA53k"
+             },
+             "Global Creative Industries": {
+                description: "This interdisciplinary program explores the global creative economy, focusing on industries such as film, fashion, music, gaming, and digital media. It covers the cultural, economic, and technological factors that drive the global creative industries.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://www.researchgate.net/publication/369925779_The_development_of_global_creative_centers_from_a_regional_perspective_A_case_study_of_Milan's_creative_industries",
+                Youtube:"https://www.youtube.com/watch?v=K1Y89_b5sPc"
+             },
+             "Aviation Engineering": {
+                description: "Focuses on aerodynamics, aircraft systems, and aviation management. This program prepares students for careers in the aviation industry, including airlines, aircraft manufacturing, and airport operations.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://www.researchgate.net/publication/322486915_Introduction_to_Aviation_Engineering",
+                Youtube:"https://www.youtube.com/watch?v=JHfI5JbiWhE"
+             },
+             "Aviation Engineering": {
+                description: "Focuses on aerodynamics, aircraft systems, and aviation management. This program prepares students for careers in the aviation industry, including airlines, aircraft manufacturing, and airport operations.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://www.researchgate.net/publication/322486915_Introduction_to_Aviation_Engineering",
+                Youtube:"https://www.youtube.com/watch?v=JHfI5JbiWhE"
+             },
+             "Arctic Studies": {
+                description: "Focuses on Arctic environmental science, geopolitics, and sustainable development in the Arctic region. It also covers Russia’s role in Arctic exploration, climate change research, and natural resource management in the region.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://www.researchgate.net/publication/330939242_Introductory_Chapter_Arctic_Studies_-_A_Proxy_for_Climate_Change",
+                Youtube:"https://www.youtube.com/watch?v=hwMwnySFciE"
+             },
+             "Cybersecurity for Critical Infrastructure": {
+                description: "Cybersecurity for Critical Infrastructure",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://www.researchgate.net/publication/335752979_Cybersecurity_of_Critical_Infrastructure",
+                Youtube:"https://www.youtube.com/watch?v=oso9mewUApM"
+             },
+             "Wine Technology and Viticulture": {
+                description: "Georgia is one of the oldest wine-producing countries in the world. This course focuses on grape cultivation, wine production, fermentation technology, and wine marketing. Students gain hands-on experience in vineyards and wineries.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://ttngmai.wordpress.com/wp-content/uploads/2015/09/wine-science.pdf",
+                Youtube:"https://www.youtube.com/watch?v=nZKaU5uAA28"
+             },
+             "Conflictology and Peace Studies": {
+                description: "This course focuses on conflict resolution, peacebuilding, and post-conflict recovery, with a special focus on regional conflicts in the South Caucasus. It covers international peace initiatives, mediation techniques, and humanitarian law.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://www.mkgandhi.org/ebks/handbook-of-peace-and-conflict-studies.pdf",
+                Youtube:"This course focuses on conflict resolution, peacebuilding, and post-conflict recovery, with a special focus on regional conflicts in the South Caucasus. It covers international peace initiatives, mediation techniques, and humanitarian law."
+             },
+             "Film and Media Studies": {
+                description: "This course covers film production, media theory, and cinema history, with a focus on Georgian and regional film traditions. It includes hands-on training in film direction, screenwriting, and cinematography.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://e-catalogue.jhu.edu/arts-sciences/full-time-residential-programs/degree-programs/film-media-studies/film-media-studies.pdf",
+                Youtube:"https://www.youtube.com/@filmandmediastudieschannel"
+             },
+             "Visual Arts and Design": {
+                description: "This program focuses on painting, sculpture, graphic design, and visual communication. It includes courses on traditional Georgian art, contemporary art movements, and hands-on creative work in various media.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://www.infobooks.org/free-pdf-books/art/visual-arts/ ",
+                Youtube:"https://www.youtube.com/watch?v=pPXZ40rrdqI"
+             },
+             "Geothermal Energy": {
+                description: "Geothermal energy is a major resource in Iceland. This course covers geothermal power plant design, reservoir engineering, and sustainable development in geothermal-rich areas. Students benefit from Iceland’s extensive geothermal infrastructure.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://www.geothermal-energy.org/pdf/IGAstandard/WGC/1995/1-fridleifsson.pdf",
+                Youtube:"https://www.youtube.com/watch?v=eWkhpWRRpVo"
+             },
+             "Viking and Medieval Norse Studies": {
+                description: "Focuses on Viking history, Norse mythology, medieval Icelandic literature, and the sagas. It includes studies of the Viking Age, Old Norse language, and Iceland’s literary contributions during the medieval period.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://www.academia.edu/70415250/Ha_sko_li_I_slands_Hugvi_sindasvi%C3%B0_Viking_and_Medieval_Norse_Studies",
+                Youtube:"https://www.youtube.com/@OldNorseStudies"
+             },
+             "Glaciology and Climate Change": {
+                description: "Specializes in the study of glaciers, ice caps, and their interaction with climate change. Students explore the melting of glaciers, glacial geology, and the impact of climate change on polar and subpolar regions, with Iceland's glaciers providing a unique environment for fieldwork.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://www.rmf.is/static/files/Documents/Publications/Reports/2013/tourism_landscapes_and_climate_change_in_iceland.pdf",
+                Youtube:"https://www.youtube.com/watch?v=oGgH_aIjHJE"
+             },
+             "Tropical Ecology": {
+                description: "Focuses on the study of tropical ecosystems, biodiversity, and conservation strategies, particularly in the Amazon rainforest.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://www.youtube.com/watch?v=ue1_vzhLpII",
+                Youtube:"https://www.youtube.com/watch?v=ue1_vzhLpII"
+             },
+             "Andean and Amazonian Studies": {
+                description: "Examines the cultural, environmental, and social dynamics of the Andean and Amazonian regions, focusing on indigenous perspectives",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://escholarship.org/content/qt5223g28c/qt5223g28c_noSplash_19e4675b2df7989360754ee2f0fa182b.pdf?t=quw9sm",
+                Youtube:"https://www.youtube.com/watch?v=k0a3mTPSSyA"
+             },
+             "Petroleum Engineering": {
+                description: "Focuses on the extraction and management of petroleum resources, vital to Venezuela’s economy, including drilling technologies and reservoir management.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://www.spe.org/authors/docs/symbols.pdf",
+                Youtube:"https://www.youtube.com/watch?v=dTy0eeUTURk"
+             },
+             "Social Development": {
+                description: "Examines social policies, community development, and the socio-economic challenges facing Venezuelan society.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://www.infanthearing.org/ebook-educating-children-dhh/chapters/Chapter%204%202018.pdf",
+                Youtube:"https://www.youtube.com/watch?v=WbBm_YLwowc"
+             },
+             "Master's in Game Design and Production": {
+                description: "Focuses on the design, development, and production of digital games, with hands-on projects and collaboration with industry professionals.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://ptgmedia.pearsoncmg.com/images/9780321929679/samplepages/0321929675.pdf",
+                Youtube:""
+             },
+             "Master's in Human-Technology Interaction": {
+                description: "This program explores the relationship between humans and technology, focusing on usability, interaction design, and user experience (UX).",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://drive.google.com/file/d/0B7BMjTzz9QXMbE4yQjlSV3k1ejg/edit?resourcekey=0-5DbEIwKAbV4N2WP-skyS6w",
+                Youtube:"https://www.youtube.com/watch?v=WW1g3UT2zww&list=PLLssT5z_DsK_nusHL_Mjt87THSTlgrsyJ"
+             },
+             "Master's in Software Engineering and Digital Transformation": {
+                description: "This program emphasizes modern software engineering practices with a focus on digital transformation, project management, and agile methodologies.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://lutpub.lut.fi/bitstream/handle/10024/168189/mastersthesis_rahman_badhon.pdf?sequence=1",
+                Youtube:"https://www.youtube.com/watch?v=WbBm_YLwowc"
+             },
+             "Master of Digital Financial Technology": {
+                description: ": Focuses on fintech, blockchain technology, digital currencies, and innovative financial solutions.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://masters.nus.edu.sg/programmes/master-of-science-in-digital-financial-technology",
+                Youtube:"https://www.youtube.com/watch?v=90JWoR9MfYU&list=PLUl4u3cNGP61Q_RVDn6srWbLV_zFnd9n0"
+             },
+             "Master of IT in Business (MITB) – Analytics Track": {
+                description: "Focuses on data analytics and its application in business decision-making, combining IT skills with business analytics.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://mrcet.com/downloads/digital_notes/AE/III/Business%20Analytics.pdf",
+                Youtube:"https://www.youtube.com/watch?v=-psusaPKLg0&list=PLEiEAq2VkUUIhyGLSiEzotDRF0hc1xbiN"
+             },
+             "Master in Digital Innovation": {
+                description: "The course focuses on digital transformation, innovation strategies, and technology management, with applications in various industries.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://www.researchgate.net/publication/328148808_Digital_Innovation",
+                Youtube:"https://www.youtube.com/watch?v=rLA-vVLNvws&list=PLb5SyhPhDyTci1lsuhn2Dj1zxqLyENLW5"
+             },
+             "Masters in Robotics and Intelligent Systems": {
+                description: "This course emphasizes robotics, artificial intelligence, and intelligent systems, with a focus on advanced robotics technology used in industries like healthcare, manufacturing, and autonomous vehicles.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://constructor.university/sites/default/files/2023-01/bsc_ris_handbook2022.pdf",
+                Youtube:"https://www.youtube.com/watch?v=y39OlGrVFD8&list=PLYwpaL_SFmcBmfMtX5wRMAtqna7pY-YtG"
+             },
+             "Masters in Nanoengineering": {
+                description: "This program focuses on nanoengineering and nanotechnology applications in electronics, healthcare, and materials science. The curriculum blends fundamental research with cutting-edge nanomaterial technology.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"https://web.pdx.edu/~pmoeck/phy381/intro-nanotech.pdf",
+                Youtube:"https://www.youtube.com/watch?v=qDnzI05vvSc&list=PLMlC7Vx5awsenMs5y02xcW6i5NmdEIRGx"
+             },
+             ". Masters in Animation and Digital Arts": {
+                description: "Focuses on animation techniques, character design, and digital arts, with a strong foundation in traditional Japanese animation (anime) and global digital arts practices.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master of Engineering in Intelligent Informatics": {
+                description: "This program focuses on intelligent informatics, including artificial intelligence, machine learning, data analysis, and smart systems used in various industries.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Masters in Smart City Engineering ": {
+                description: "Focuses on smart city development, infrastructure planning, and sustainable urban design using technology-driven solutions such as IoT, AI, and big data.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Masters in Industrial AI and Automation": {
+                description: ": Focuses on AI applications in industrial automation, smart factories, robotics, and machine learning for industrial processes.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master of Digital Media": {
+                description: ":Focuses on the development of digital media content, interactive technology, video games, and visual effects. The program encourages collaboration with industry partners for hands-on projects.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master of Sustainable Agriculture": {
+                description: ":This program focuses on sustainable farming practices, food security, agroecology, and organic agriculture, preparing students for the challenges of sustainable food production.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master of Science in Offshore & Dredging Engineering": {
+                description: "This program covers offshore engineering, dredging, marine structures, and sustainable energy development. It is designed to meet the increasing demand for engineers in offshore industries.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Masters in Global Criminal Law": {
+                description: "Focuses on international criminal law, transnational crimes like human trafficking, terrorism, and cybercrime, with a global legal framework.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master of Advanced Studies in Sustainable Water Resources": {
+                description: "Provides a focus on water management, water treatment technologies, and the role of sustainable practices in water conservation. It incorporates engineering, hydrology, and resource management.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master of Science in Robotics, Cognition, Intelligence": {
+                description: "Focuses on robotics, artificial intelligence (AI), and machine learning with applications in autonomous systems and human-robot interaction.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master in Computational Neuroscience": {
+                description: "Integrates neuroscience and computer science, focusing on brain models, neural networks, and data analysis to understand neural functions.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Masters in Cyberpsychology": {
+                description: "Focuses on understanding how digital technology affects human behavior, including social media, gaming, and online behavior analysis.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master of Science in Disaster Management and Sustainable Development": {
+                description: "Focuses on disaster risk reduction, crisis management, and sustainable development strategies to manage natural and human-made disasters",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master of Science in Biotherapeutics": {
+                description: "Focuses on the development of biopharmaceuticals, including biologics, biosimilars, and advanced therapies like gene and cell therapy.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master of Science in Digital Health Transformation": {
+                description: "Focuses on digital tools and technologies that are transforming healthcare, including telemedicine, health informatics, and eHealth applications.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master of Science in Computational Neuroscience": {
+                description: "Focuses on computational models of the brain, neural networks, and data analysis to understand neurological behavior.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master of Science in Quantitative Finance and Risk Management": {
+                description: "Focuses on quantitative analysis, risk modeling, and financial markets, preparing students for careers in finance and risk management",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master of Applied Cybernetics": {
+                description: "Focuses on cybernetics, human-computer interaction, and the ethical implications of artificial intelligence and robotics.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master of Design Futures": {
+                description: "Focuses on design thinking and sustainability, teaching students to solve complex social and environmental problems through innovative design strategies.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master of Dairy Science and Technology": {
+                description: "Focuses on advanced studies in dairy science, including milk processing, product development, and supply chain management.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master of Science in Earthquake Engineering": {
+                description: "Focuses on structural engineering, earthquake resilience, and disaster management, with hands-on learning in seismic design.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master in Peace and Conflict Studies": {
+                description: "Offers in-depth studies on conflict resolution, peacebuilding, and international diplomacy. The program involves collaborations with international peace organizations. ",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master in Geology (Petroleum Geosciences)": {
+                description: "Focuses on petroleum geosciences, oil exploration, and reservoir engineering, preparing students for careers in Norway’s oil and gas industries.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master's in Nordic Welfare": {
+                description: "Explores the Nordic welfare system, focusing on social policies, healthcare, and social equality, with a comparative study of global welfare models.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master's in Bioentrepreneurship": {
+                description: "Combines bioscience with business, focusing on entrepreneurship in the life sciences, including startups in pharmaceuticals, biotechnology, and healthcare.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master of Space Studies": {
+                description: "Focuses on the scientific, technological, and political aspects of space exploration and satellite technologies. Covers satellite design, space policy, and Earth observation.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master in Agro- and Environmental Nematology": {
+                description: "Focuses on nematology, studying nematodes (roundworms) that impact agriculture, ecosystems, and human health, with practical training in nematode management.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master in Digital Media Management": {
+                description: ": Combines digital media strategies with management skills, focusing on digital transformation, media ethics, and emerging media technologies.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Advanced Master in Aerospace Engineering": {
+                description: "Offers advanced studies in aircraft design, aerospace materials, space propulsion, and satellite technologies, with hands-on research opportunities.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master in International Sports Management": {
+                description: "Offers deep insights into the global sports industry, focusing on management, marketing, sponsorship, and event organization in the sports sector",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master in Urban Design and City Planning": {
+                description: "Specializes in sustainable urban planning, smart cities, and the social, economic, and environmental aspects of urbanization.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master in Yacht Design": {
+                description: ": Focuses on the design, engineering, and construction of luxury yachts, with hands-on experience in the marine industry.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master in Automotive Engineering": {
+                description: "Specializes in automotive engineering with a focus on high-performance vehicles, including collaborations with companies like Ferrari and Maserati.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master in Wine Tourism Innovation": {
+                description: "Focuses on the growing field of wine tourism, combining marketing, viticulture, and hospitality management, with Portugal’s renowned wine industry as a backdrop.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master in Environmental Engineering": {
+                description: ": Focuses on waste management, water treatment, renewable energy, and environmental policy, with hands-on research and project-based learning",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master in Wine Tourism Innovation": {
+                description: "Focuses on the growing field of wine tourism, combining marketing, viticulture, and hospitality management, with Portugal’s renowned wine industry as a backdrop.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master's in E-Governance Technologies and Services": {
+                description: "Focuses on electronic governance systems, digital public services, and cybersecurity, with practical experience in Estonia’s world-leading e-government infrastructure.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master's in Cyber Security": {
+                description: "Specializes in network security, cryptography, and digital forensics. Estonia’s expertise in cybersecurity and digital infrastructure makes this course globally relevant.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master in Logistics and Supply Chain Management": {
+                description: "Highlights: Focuses on global supply chain management, logistics operations, and international trade, with a special emphasis on the Baltic region’s logistics network.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master in Medicine": {
+                description: "Offers training in general medicine, with modern healthcare technologies and exposure to European medical practices.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master in Urban Studies": {
+                description: ": Focuses on urban planning, sustainable city design, and environmental impact assessments, with hands-on urban development projects in Europe.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master in Industrial Engineering and Management": {
+                description: "Combines engineering principles with management skills, focusing on innovation in manufacturing, automation, and lean production techniques.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master in Health Economics": {
+                description: "Focuses on health policy, healthcare management, and the economics of health systems, with a European healthcare perspective.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Master in International Relations and Diplomacy": {
+                description: "Provides knowledge on international politics, diplomacy, global governance, and conflict resolution, with a special emphasis on European politics.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Bachelors in Game Design": {
+                description: "Covers game development, design principles, and interactive media. Students work on real projects and collaborate with industry partners.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Masters in Creative Writing": {
+                description: ": Focuses on narrative techniques, genre studies, and the publishing process. Includes workshops and mentorship from established writers.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Masters in Digital Communication and Media": {
+                description: "Explores digital media strategies, content creation, and media ethics. Emphasizes practical skills through internships and workshops.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Masters in Cultural Heritage Studies": {
+                description: "Covers heritage management, preservation techniques, and cultural tourism. Opportunities for practical experience in museums and heritage sites.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Bachelors in Animation and Multimedia Art": {
+                description: "Covers 2D and 3D animation, character design, and digital storytelling. Students create portfolios and participate in film festivals.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Masters in Business Psychology": {
+                description: "Masters in Business Psychology",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Bachelors in Music Production": {
+                description: "Focuses on audio engineering, music composition, and sound design. Includes practical experience in recording studios and live sound settings.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Bachelors in Film and Television Production": {
+                description: "Covers all aspects of film production, including directing, cinematography, and editing. Students create short films and documentaries.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Masters in Hospitality Management": {
+                description: "Focuses on tourism management, food and beverage service, and event planning. Includes practical training in hotels and restaurants.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Masters in Cultural Management": {
+                description: "Focuses on managing cultural institutions, project management, and cultural policy. Offers internships in cultural organizations.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Masters in Social Work": {
+                description: "Focuses on social justice, community development, and social policy. Includes internships in social services and community organizations.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Bachelors in Food Technology": {
+                description: ": Covers food processing, safety, and quality control. Involves practical training in food production and industry placements.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Bachelors in Culinary Arts": {
+                description: "Emphasizes culinary techniques, food safety, and gastronomy, with practical training in kitchens and restaurants. ",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Bachelors in Music Therapy": {
+                description: "Combines music education with therapeutic practices, focusing on the psychological and emotional benefits of music.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Bachelors in Game Art and Design": {
+                description: "Focuses on the artistic aspects of game development, including character design, environments, and visual storytelling.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Masters in Ancient Greek Philosophy": {
+                description: "Focuses on the philosophical contributions of ancient Greek thinkers, exploring texts and historical contexts.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Masters in Digital Curation and Cultural Heritage": {
+                description: "Focuses on the preservation and digital representation of cultural heritage, integrating technology and museum studies.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Masters in Ottoman Studies": {
+                description: "Focuses on the history, culture, and politics of the Ottoman Empire, integrating interdisciplinary approaches and archival research",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             "Bachelors in Gastronomy and Culinary Arts": {
+                description: "Focuses on culinary techniques, food culture, and restaurant management, with practical training in professional kitchens.",
+                duration: "3 years",
+                prerequisites: "Interest in social sciences",
+                study_materials:"",
+                Youtube:""
+             },
+             
+        };
         // Display course details
         function displayCourseDetails() {
             const courseName = getQueryParam("course");
             const courseDetailsDiv = document.getElementById("course-details");
 
-            if (courseName) {
+            if (courseName && courses[courseName]) {
+                const course = courses[courseName];
                 courseDetailsDiv.innerHTML = `
                     <p><strong>Course Name:</strong> ${courseName}</p>
-                    <p><strong>Description:</strong> This is a detailed description of the ${courseName} course.</p>
-                    <p><strong>Duration:</strong> 3-4 years</p>
-                    <p><strong>Prerequisites:</strong> Relevant foundational knowledge</p>
+                    <p><strong>Description:</strong> ${course.description}</p>
+                    <p><strong>Duration:</strong> ${course.duration}</p>
+                    <p><strong>Prerequisites:</strong> ${course.prerequisites}</p>
+                    <div class="course-details">
+                <div class="course-row">
+                    <strong>Study Materials:</strong>
+                    <a href="${course.study_materials}" target="_blank">Download PDF</a>
+                </div>
+                <div class="course-row">
+                    <strong>YouTube:</strong>
+                    <a href="${course.youtube}" target="_blank">Watch Video</a>
+                </div>
+            </div>
                 `;
             } else {
-                courseDetailsDiv.textContent = "No course selected.";
+                courseDetailsDiv.textContent = "No course details available.";
             }
         }
 
