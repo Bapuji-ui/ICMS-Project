@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GRE & TOEFL Exam Information</title>
     <link rel="stylesheet" type="text/css" href="icms.css">
-    
 
     <style>
         body {
@@ -112,13 +111,15 @@
             <div id="learned-logo">
                 <a href="../index.html"><img src="E:\pg\images\icon\Nist.berhampur.logo.jpg" style="width: 120px;"></a>
             </div>
-            <div>
-                <h1>GRE & TOEFL Scholarship Finder</h1>
-            </div>
+            
         </div>
+        
     </header>  
 
     <div class="container">
+        <div>
+            <h1>GRE & TOEFL Scholarship Finder</h1>
+        </div>
         <div class="form-section">
             <label for="exam-status">Have you appeared for TOEFL or GRE?</label>
             <select id="exam-status" onchange="handleExamStatusChange()">
@@ -171,6 +172,7 @@
                 <li><a href="https://www.ets.org/toefl" target="_blank">Official TOEFL Website</a></li>
                 <li><a href="https://www.ets.org/toefl/test-takers/ibt/prepare.html" target="_blank">TOEFL Preparation Resources</a></li>
                 <li><a href="https://www.ets.org/toefl/test-takers/ibt/register" target="_blank">TOEFL Registration</a></li>
+
         </div>
 
         <!-- University Details Section -->
@@ -180,30 +182,166 @@
         </div>
     </div>
     <script>
-        const countries = ["Australia", "Canada", "Germany", "India", "United Kingdom", "United States"];
+       const countries = ["Australia", "Canada", "Germany", "United Kingdom", "United States","indonesia","Malasiya","Thailand","Nepal","Bhutan","Pakistan","Bangladesh","Israel","Qatar","Kuwait"];
         const universityData = {
             gre: {
                 "United States": [
-                    { name: "MIT", program: "MS in CS", link: "https://mit.edu" },
-                    { name: "Stanford University", program: "MBA", link: "https://stanford.edu" }
+                    { name: "MIT", program: "MS in CS", link: "https://mit.edu", info: "Provides in-depth education in electrical engineering, computer science, and related fields, with opportunities for research in artificial intelligence, robotics, and computational theory." },
+                    { name: "Stanford University", program: "MBA", link: "https://stanford.edu",info: "Offers a comprehensive curriculum in computer science with specializations in artificial intelligence, machine learning, systems, and more, alongside cutting-edge research opportunities." }
                 ],
                 "Canada": [
-                    { name: "University of Toronto", program: "MSc Data Science", link: "https://utoronto.ca" },
-                    { name: "McGill University", program: "PhD in Physics", link: "https://mcgill.ca" }
-                ]
+                    { name: "University of Toronto", program: "MSc Data Science", link: "https://utoronto.ca", link:"Offers advanced training in computer science, with research opportunities in artificial intelligence, machine learning, data science, and systems."},
+                    { name: "McGill University", program: "PhD in Physics", link: "https://mcgill.ca", info: "Provides advanced study and research opportunities in areas such as artificial intelligence, machine learning, algorithms, and software engineering."}
+                ],
+                "United Kingdom": [
+                { name: "University of Oxford", program: "Master of Science in Computer Science", link: "https://www.cs.ox.ac.uk/admissions/postgraduate/", info: "offers advanced knowledge in computer science, including algorithms, artificial intelligence, and machine learning" },
+                { name: "University of Cambridge", program: "MPhil in Management", link: "https://www.jbs.cam.ac.uk/programmes/mphil-in-management/", info: "provides a comprehensive management education with a focus on entrepreneurship, leadership, and strategy" } ,
+                { name: "Imperial College London", program: "MSc in Advanced Computing", link: "https://www.imperial.ac.uk/computing/prospective-students/courses/msc-advanced-computing/", info: "focuses on software engineering, advanced computing techniques, and algorithmic development" },
+                ],
+                "Germany": [
+                { name: "Technical University of Munich (TUM)", program: "MSc in Computer Science", link: "https://www.in.tum.de/en/for-prospective-students/master/computer-science/", info: "offers advanced studies in algorithms, data structures, and machine learning" },
+                { name: "Ludwig Maximilian University of Munich (LMU)", program: "MSc in Management", link: "https://www.bwl.uni-muenchen.de/studium/studiengaenge/master/index.html", info: "focuses on international management, leadership, and strategy" },
+                { name: "University of Heidelberg", program: "MSc in Data Science", link: "https://www.uni-heidelberg.de/en/study/all-programs/data-science", info: "combines data analysis, machine learning, and data engineering" }
+                ],
+               "Australia": [
+               { name: "University of Melbourne", program: "Master of Science in Computer Science", link: "https://study.unimelb.edu.au/find/courses/graduate/master-of-science/", info: "focuses on advanced computer science topics, including algorithms, AI, and machine learning" },
+               { name: "University of Sydney", program: "Master of Data Science", link: "https://www.sydney.edu.au/courses/master-of-data-science.html", info: "provides expertise in data analysis, machine learning, and statistical modeling" },
+               { name: "Australian National University (ANU)", program: "Master of Computing", link: "https://www.anu.edu.au/study/programs/master-computing", info: "offers advanced knowledge in computer science, software development, and AI" }
+               ],
+               "Indonesia": [
+               { name: "Universitas Indonesia (UI)", program: "Master of Computer Science", link: "https://www.cs.ui.ac.id/en/graduate-programs/", info: "focuses on computer science, data engineering, algorithms, and artificial intelligence" },
+               { name: "Institut Teknologi Bandung (ITB)", program: "Master of Information Technology", link: "https://www.itb.ac.id/en/program/graduate", info: "offers advanced study in IT systems, software development, and data science" },
+               { name: "Universitas Gadjah Mada (UGM)", program: "Master of Computer Science", link: "https://www.cs.ugm.ac.id/en/graduate-programs/", info: "provides in-depth training in computer science, artificial intelligence, and data analytics" }
+               ],
+               "Malasiya": [
+               { name: "University of Malaya (UM)", program: "Master of Computer Science", link: "https://www.cs.um.edu.my/graduate-programmes/", info: "focuses on computer science, artificial intelligence, data science, and software engineering" },
+               { name: "Monash University Malaysia", program: "Master of Information Technology", link: "https://www.monash.edu.my/study/courses/master-of-information-technology", info: "provides expertise in software engineering, data systems, and information security" },
+               { name: "Universiti Teknologi Malaysia (UTM)", program: "Master of Engineering (Electrical)", link: "https://www.utm.my/graduate/engineering-master/", info: "offers advanced knowledge in electrical engineering, systems design, and automation" },
+               { name: "Universiti Kebangsaan Malaysia (UKM)", program: "Master of Business Administration (MBA)", link: "https://www.ukm.my/fep/graduate/master-of-business-administration-mba/", info: "provides advanced management education focusing on leadership, strategy, and entrepreneurship" }
+               ],
+               "Thailand": [
+               { name: "Chulalongkorn University", program: "Master of Computer Science", link: "https://www.cs.chula.ac.th/en/graduate-programs/", info: "focuses on computer science, software engineering, data science, and AI" },
+               { name: "Mahidol University", program: "Master of Science in Data Science", link: "https://www.sc.mahidol.ac.th/en/graduate-programs", info: "provides expertise in data analysis, machine learning, and big data technologies" },
+               { name: "King Mongkut's University of Technology Thonburi (KMUTT)", program: "Master of Engineering in Computer Engineering", link: "https://www.kmutt.ac.th/en/academics/graduate-programs/", info: "offers advanced study in computer engineering, AI, and embedded systems" }
+               ],
+               "Nepal": [
+               { name: "Tribhuvan University", program: "Master of Computer Science", link: "https://www.tu.edu.np/", info: "focuses on computer science, software engineering, data analysis, and artificial intelligence" },
+               { name: "Kathmandu University", program: "Master of Science in Computer Science and Engineering", link: "https://ku.edu.np/academics/graduate", info: "provides expertise in computer systems, algorithms, machine learning, and software engineering" },
+               { name: "Pokhara University", program: "Master of Science in Computer Science", link: "https://www.pu.edu.np/", info: "focuses on computer science, data structures, and software development" }
+               ],
+               "Bhutan": [
+               { name: "Royal University of Bhutan (RUB)", program: "Master of Science in Computer Science", link: "https://www.rub.edu.bt/", info: "focuses on computer science, software development, data science, and AI" },
+               { name: "Royal Thimphu College", program: "Master of Business Administration (MBA)", link: "https://www.rtc.bt/", info: "provides management education with a focus on leadership, strategy, and entrepreneurship" },
+               { name: "Paro College of Education", program: "Master of Education", link: "https://www.pce.edu.bt/", info: "focuses on educational leadership, curriculum development, and teaching methodology" },
+               { name: "Gaeddu College of Business Studies", program: "Master of Business Administration (MBA)", link: "https://www.gcbs.edu.bt/", info: "offers an MBA program with a focus on business strategy, marketing, and management" }
+               ],
+               "Pakistan": [
+               { name: "National University of Sciences and Technology (NUST)", program: "Master of Science in Computer Science", link: "https://nust.edu.pk/academics/graduate-programs/", info: "focuses on computer science, algorithms, software engineering, and artificial intelligence" },
+               { name: "Quaid-i-Azam University (QAU)", program: "Master of Science in Computer Science", link: "https://www.qau.edu.pk/", info: "offers advanced knowledge in computer science, programming, and data analytics" },
+               { name: "COMSATS University Islamabad", program: "Master of Information Technology", link: "https://www.comsats.edu.pk/", info: "provides training in information technology, software development, and network systems" }
+               ],
+               "Bangladesh": [
+               { name: "Bangladesh University of Engineering and Technology (BUET)", program: "Master of Science in Computer Science and Engineering", link: "https://www.buet.ac.bd/", info: "focuses on computer science, software engineering, data science, and artificial intelligence" },
+               { name: "University of Dhaka", program: "Master of Science in Computer Science", link: "https://www.du.ac.bd/", info: "offers advanced training in computer science, algorithms, and machine learning" },
+               { name: "North South University", program: "Master of Business Administration (MBA)", link: "https://www.northsouth.edu/", info: "focuses on leadership, business strategy, and entrepreneurship" }
+               ],
+               "Srilanka": [
+               { name: "University of Colombo", program: "Master of Science in Computer Science", link: "http://www.cmb.ac.lk/", info: "focuses on computer science, software engineering, artificial intelligence, and data analysis" },
+               { name: "University of Moratuwa", program: "Master of Science in Computer Science", link: "https://www.mrt.ac.lk/", info: "provides expertise in computer systems, software development, and AI technologies" },
+               { name: "University of Peradeniya", program: "Master of Science in Information Technology", link: "https://www.pdn.ac.lk/", info: "focuses on IT management, software engineering, and data systems" },
+               { name: "Sri Lanka Institute of Information Technology (SLIIT)", program: "Master of Information Technology", link: "https://www.sliit.lk/", info: "offers advanced courses in information technology, network systems, and IT management" }
+               ],
+               "Israel": [
+               { name: "Tel Aviv University", program: "Master of Science in Computer Science", link: "https://www.tauex.tau.ac.il/", info: "focuses on computer science, software engineering, artificial intelligence, and machine learning" },
+               { name: "Hebrew University of Jerusalem", program: "Master of Science in Computer Science", link: "https://en.cs.huji.ac.il/", info: "provides advanced training in computer science, algorithms, and data science" },
+               { name: "Technion – Israel Institute of Technology", program: "Master of Science in Computer Science", link: "https://www.technion.ac.il/en/", info: "offers advanced study in computer systems, AI, and machine learning" }
+               ],
+               "Qatar": [
+               { name: "Qatar University", program: "Master of Computer Science", link: "https://www.qu.edu.qa/", info: "focuses on computer science, software engineering, artificial intelligence, and machine learning" },
+               { name: "Carnegie Mellon University in Qatar", program: "Master of Science in Information Systems", link: "https://www.qatar.cmu.edu/", info: "provides expertise in information systems, IT management, and data science" },
+               { name: "Texas A&M University at Qatar", program: "Master of Science in Electrical Engineering", link: "https://www.qatar.tamu.edu/", info: "focuses on electrical engineering, systems design, and telecommunications" }
+               ],
+               "Kuwait": [
+               { name: "Kuwait University", program: "Master of Science in Computer Science", link: "https://www.ku.edu.kw/", info: "focuses on computer science, software engineering, artificial intelligence, and data analysis" },
+               { name: "American University of Kuwait", program: "Master of Business Administration (MBA)", link: "https://www.auk.edu.kw/", info: "offers an MBA program with a focus on leadership, strategy, and entrepreneurship" },
+               { name: "Gulf University for Science and Technology (GUST)", program: "Master of Science in Computer Science", link: "https://www.gust.edu.kw/", info: "provides expertise in software development, computer systems, and data science" }
+               ]
             },
             toefl: {
-                "Germany": [
-                    { name: "Technical University of Munich", program: "Master in Electrical Engineering", link: "https://tum.de" },
-                    { name: "Heidelberg University", program: "PhD in Biology", link: "https://uni-heidelberg.de" }
+                Germany: [
+                    { name: "Technical University of Munich", program: "Master in Electrical Engineering", link: "https://tum.de",info:"Offers an advanced curriculum in computer science with focus areas such as artificial intelligence, data science, and software engineering." },
+                    { name: "Heidelberg University", program: "PhD in Biology", link: "https://uni-heidelberg.de",info:"Offers a comprehensive program in computer science with a strong emphasis on theoretical foundations and modern computational techniques." }
                 ],
                 "United States": [
-                    { name: "Harvard University", program: "MBA", link: "https://harvard.edu" },
-                    { name: "UC Berkeley", program: "Master in AI", link: "https://berkeley.edu" }
+                    { name: "Harvard University", program: "MBA", link: "https://harvard.edu",info:"Offers a world-class education in computer science, with specializations in areas such as artificial intelligence, systems, and data science, combined with a strong focus on interdisciplinary research." },
+                    { name: "UC Berkeley", program: "Master in AI", link: "https://berkeley.edu",info:"Offers an advanced curriculum in computer science with research opportunities in areas such as artificial intelligence, machine learning, robotics, and theoretical computer science." }
+                ],
+                "United Kingdom": [
+                    { name: "University of Oxford", program:"English Language and Literature",link:"https://www.ox.ac.uk/admissions/undergraduate/courses/english-language-and-literature",info:"focuses on the study of English literature, language, and critical theory"},
+                    { name: "University of Cambridge", program: "MPhil in English", link: "https://www.graduate.study.cam.ac.uk/courses/directory/ahengmphil", info: "a postgraduate program focusing on literary studies, theory, and research" }
+                ],
+                "Canada": [
+                { name: "University of Toronto", program: "Master of Arts in English", link: "https://artsci.utoronto.ca/future/academics/english/", info: "offers an advanced study in English literature, critical theory, and cultural studies" },
+                { name: "University of British Columbia (UBC)", program: "MSc in Computer Science", link: "https://you.ubc.ca/programs/computer-science/", info: "focuses on computer science, algorithms, data structures, and artificial intelligence" }
+                ],
+                "Australia": [
+                { name: "University of Melbourne", program: "Master of Arts (English)", link: "https://study.unimelb.edu.au/find/courses/graduate/master-of-arts/", info: "focuses on advanced study in English literature, culture, and theory" },
+                { name: "Australian National University (ANU)", program: "Master of Science (Computer Science)", link: "https://www.anu.edu.au/study/find-a-course/master-of-science", info: "offers an in-depth study of computer science, algorithms, and AI technologies" }
+                ],
+                "Indonesia": [
+                { name: "University of Indonesia (UI)", program: "Master of Computer Science", link: "https://www.ui.ac.id/", info: "focuses on computer science, software engineering, data science, and artificial intelligence" },
+                { name: "Gadjah Mada University (UGM)", program: "Master of Science in Computer Science", link: "https://www.ugm.ac.id/en", info: "provides expertise in computer science, data analysis, and software development" },
+                { name: "Bandung Institute of Technology (ITB)", program: "Master of Information Technology", link: "https://www.itb.ac.id/", info: "offers advanced courses in information technology, software development, and IT management" }
+                ],
+                "Malasiya": [
+                { name: "University of Malaya (UM)", program: "Master of Computer Science", link: "https://www.um.edu.my/", info: "focuses on computer science, software engineering, data science, and artificial intelligence" },
+                { name: "Monash University Malaysia", program: "Master of Information Technology", link: "https://www.monash.edu.my/", info: "provides expertise in IT systems, software engineering, and network systems" }
+                ],
+                "Thailand": [
+                { name: "Chulalongkorn University", program: "Master of Science in Computer Science", link: "https://www.chula.ac.th/en/", info: "focuses on computer science, software engineering, artificial intelligence, and data analysis" },
+                { name: "Mahidol University", program: "Master of Science in Computer Science", link: "https://www.mahidol.ac.th/en/", info: "provides expertise in computer science, machine learning, and data science" }
+                ],
+                "Nepal": [
+                { name: "Tribhuvan University", program: "Master of Computer Applications (MCA)", link: "https://www.tu.edu.np/", info: "focuses on computer applications, software development, and data management" },
+                { name: "Kathmandu University", program: "Master of Science in Computer Science and Engineering", link: "https://www.ku.edu.np/", info: "provides expertise in computer science, software engineering, and AI technologies" }
+                ],
+                "Bhutan": [
+                { name: "Royal University of Bhutan (RUB)", program: "Master of Business Administration (MBA)", link: "https://www.rub.edu.bt/", info: "focuses on leadership, management, and strategic business practices" },
+                { name: "Sherubtse College", program: "Master of Science in Environmental Science", link: "https://www.sherubtse.edu.bt/", info: "provides training in environmental science, sustainability, and natural resource management" },
+                { name: "College of Science and Technology", program: "Master of Engineering in Civil Engineering", link: "https://www.cst.edu.bt/", info: "focuses on civil engineering, construction management, and infrastructure development" }
+                ],
+                "Pakistan": [
+                { name: "Quaid-i-Azam University", program: "Master of Computer Science", link: "https://www.qau.edu.pk/", info: "focuses on computer science, software engineering, artificial intelligence, and data science" },
+                { name: "Lahore University of Management Sciences (LUMS)", program: "Master of Business Administration (MBA)", link: "https://www.lums.edu.pk/", info: "offers an MBA program focusing on leadership, strategy, and business management" },
+                { name: "COMSATS Institute of Information Technology", program: "Master of Science in Computer Science", link: "https://www.comsats.edu.pk/", info: "provides expertise in computer science, software engineering, and AI technologies" }
+                ],
+                "Bangladesh": [
+                { name: "University of Dhaka", program: "Master of Science in Computer Science and Engineering", link: "https://www.du.ac.bd/", info: "focuses on computer science, software engineering, data science, and artificial intelligence" },
+                { name: "North South University", program: "Master of Business Administration (MBA)", link: "https://www.northsouth.edu/", info: "offers an MBA program focusing on leadership, entrepreneurship, and global business strategy" },
+                { name: "BRAC University", program: "Master of Business Administration (MBA)", link: "https://www.bracu.ac.bd/", info: "provides an MBA program with a focus on business strategy, leadership, and innovation" }
+                ],
+                "Srilanka": [
+                { name: "University of Colombo", program: "Master of Science in Computer Science", link: "https://www.cmb.ac.lk/", info: "focuses on computer science, software engineering, artificial intelligence, and data science" },
+                { name: "University of Peradeniya", program: "Master of Science in Computer Science", link: "https://www.pdn.ac.lk/", info: "provides expertise in computer science, programming, and data management" },
+                { name: "University of Moratuwa", program: "Master of Science in Information Technology", link: "https://www.mrt.ac.lk/", info: "focuses on information technology, software development, and network systems" }
+                ],
+                "Israel": [
+                { name: "Tel Aviv University", program: "Master of Computer Science", link: "https://www.tau.ac.il/", info: "focuses on computer science, artificial intelligence, data science, and software engineering" },
+                { name: "The Hebrew University of Jerusalem", program: "Master of Science in Computer Science", link: "https://www.huji.ac.il/en", info: "provides expertise in computer science, machine learning, and data analytics" },
+                { name: "Technion - Israel Institute of Technology", program: "Master of Computer Science", link: "https://www.technion.ac.il/en/", info: "focuses on software engineering, artificial intelligence, and cybersecurity" }
+                ],
+                "Qatar": [
+                { name: "Qatar University", program: "Master of Computer Science", link: "https://www.qu.edu.qa/", info: "focuses on computer science, software engineering, artificial intelligence, and data science" },
+                { name: "Doha Institute for Graduate Studies", program: "Master of Public Administration", link: "https://www.dohainstitute.edu.qa/", info: "focuses on public policy, governance, and international relations" },
+                { name: "Weill Cornell Medicine-Qatar", program: "Master of Science in Genetic Medicine", link: "https://qatar-weill.cornell.edu/", info: "focuses on genetic medicine, healthcare, and biotechnology" }
+                ],
+                "Kuwait": [
+                { name: "Kuwait University", program: "Master of Computer Science", link: "https://www.ku.edu.kw/", info: "focuses on computer science, software engineering, and artificial intelligence" },
+                { name: "American University of Kuwait", program: "Master of Business Administration (MBA)", link: "https://www.auk.edu.kw/", info: "focuses on business leadership, management, and entrepreneurship" },
+                { name: "Gulf University for Science and Technology (GUST)", program: "Master of Science in Computer Science", link: "https://www.gust.edu.kw/", info: "focuses on computer science, software engineering, and data analysis" }
                 ]
             }
         };
-
         function handleExamStatusChange() {
             const status = document.getElementById("exam-status").value;
             document.getElementById("examSelectionDiv").style.display = status === "yes" ? "block" : "none";
