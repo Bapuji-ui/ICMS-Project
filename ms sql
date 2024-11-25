@@ -1,0 +1,61 @@
+const sql = require('mssql/msnodesqlv8');
+
+const config = {
+  server: "MANOJ\\SQLEXPRESS", 
+  database: "ScholarshipDB",
+  driver: "msnodesqlv8",
+  options: {
+    trustedConnection: true, 
+  },
+};
+
+sql.connect(config, function (err) {
+  if (err) {
+    console.error("Connection error:", err);
+  } else {
+    console.log("Connected to the database successfully!");
+
+    const request = new sql.Request();
+
+    request.query("SELECT * FROM Scholarships", function (err, records) {
+      if (err) {
+        console.error("Query error:", err);
+      } else {
+        console.log("Query results:", records.recordset);
+      }
+    });
+  }
+});
+
+
+
+
+-- Create Database
+CREATE DATABASE ScholarshipDB;
+GO
+
+-- Use the Database
+USE ScholarshipDB;
+GO
+
+-- Create Scholarships Table
+CREATE TABLE Scholarships (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    Country NVARCHAR(100),
+    Type NVARCHAR(10), -- GRE or TOEFL
+    University NVARCHAR(200),
+    Name NVARCHAR(200),
+    Degree NVARCHAR(100),
+    Details NVARCHAR(MAX),
+    Contact NVARCHAR(200),
+    Cost NVARCHAR(100),
+    ScholarshipLink NVARCHAR(500)
+);
+
+-- Insert Sample Data
+INSERT INTO Scholarships (Country, Type, University, Name, Degree, Details, Contact, Cost, ScholarshipLink)
+VALUES 
+('Spain', 'GRE', 'University of Barcelona', 'University of Barcelona Graduate Scholarships', 'Master’s and PhD', 'Covers full tuition, living stipend, and research allowance.', 'admissions@ub.edu', 'No cost (fully funded)', 'https://www.ub.edu'),
+('Spain', 'TOEFL', 'Complutense University of Madrid', 'Complutense University Graduate Scholarships', 'Master’s and PhD', 'Partial or full tuition coverage, living stipend.', 'admissions@ucm.es', 'No cost (fully funded)', 'https://www.ucm.es'),
+('Spain', 'TOEFL', 'Pompeu Fabra University', 'Pompeu Fabra University Graduate Scholarships', 'Master’s and PhD', 'Covers tuition fees and offers monthly stipend for living expenses.', 'international@upf.edu', 'No cost (fully funded)', 'https://www.upf.edu');
+
