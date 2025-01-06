@@ -1,0 +1,33 @@
+﻿@model LoginnMVC.Models.UserRegister
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white text-center">
+            <h2>Welcome, @Model.Username!</h2>
+        </div>
+        <div class="card-body">
+            <h4 class="mb-4">Your Profile Details</h4>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Email:</strong> @Model.Email
+                </li>
+               
+            </ul>
+        </div>
+        <div class="card-footer text-center">
+            <a href="/Account/Logout" class="btn btn-danger btn-sm">Logout</a>
+            <a href="http://127.0.0.1:5500/subjects/icms.html" class="btn btn-danger btn-sm">Home</a>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        console.log('Dashboard loaded successfully!');
+    </script>
+}
